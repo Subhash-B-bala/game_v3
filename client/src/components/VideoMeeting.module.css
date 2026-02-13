@@ -1,0 +1,201 @@
+.meetingContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-inter), sans-serif;
+}
+
+/* Join Screen - Clean Card */
+.joinScreen {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    background: radial-gradient(circle at center, rgba(59, 130, 246, 0.05) 0%, transparent 70%);
+}
+
+.lobbyTitle {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 8px;
+    color: var(--foreground);
+    letter-spacing: -0.02em;
+}
+
+.joinBtn {
+    padding: 16px 40px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.3);
+    transition: all 0.2s;
+}
+
+.joinBtn:hover {
+    background: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 20px 25px -5px rgba(59, 130, 246, 0.4);
+}
+
+/* Active Meeting */
+.meetingHeader {
+    padding: 20px 32px;
+    background: var(--surface);
+    border-bottom: 1px solid var(--surface-highlight);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.liveLabel {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(239, 68, 68, 0.1);
+    border: 1px solid rgba(239, 68, 68, 0.2);
+    padding: 6px 12px;
+    border-radius: 9999px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    background: #ef4444;
+    border-radius: 50%;
+    animation: pulse 1.5s infinite;
+}
+
+.labelText {
+    color: #ef4444;
+    font-weight: 700;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.mainTitle {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--foreground-muted);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.meetingGrid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    padding: 32px;
+    background: var(--background);
+}
+
+.participantCard {
+    background: var(--surface);
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border: 1px solid var(--surface-highlight);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.nameTag {
+    position: absolute;
+    bottom: 24px;
+    left: 24px;
+    background: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(4px);
+    padding: 8px 16px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tagName {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: white;
+}
+
+.responseArea {
+    padding: 32px;
+    background: var(--surface);
+    border-top: 1px solid var(--surface-highlight);
+}
+
+.responseGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.responseBtn {
+    padding: 24px;
+    background: var(--background);
+    border: 1px solid var(--surface-highlight);
+    border-radius: 12px;
+    color: var(--foreground);
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.responseBtn:hover {
+    background: var(--primary);
+    border-color: var(--primary);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.3);
+}
+
+.btnTitle {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: var(--primary);
+    transition: color 0.2s;
+}
+
+.responseBtn:hover .btnTitle {
+    color: white;
+}
+
+.btnDesc {
+    font-size: 0.9rem;
+    color: var(--foreground-muted);
+    line-height: 1.5;
+    transition: color 0.2s;
+}
+
+.responseBtn:hover .btnDesc {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+}

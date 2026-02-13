@@ -1,0 +1,441 @@
+/* ============================================================
+   Game Page Styles — Phase 2 (Full Game)
+   ============================================================ */
+
+.fullscreen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: var(--space-xl);
+    position: relative;
+}
+
+/* ---- Progress Bar ---- */
+
+.progressBar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.08);
+    z-index: 999;
+}
+
+.progressFill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary-blue), var(--primary-purple));
+    transition: width var(--transition-slow);
+    border-radius: 0 var(--radius-full) var(--radius-full) 0;
+}
+
+/* ---- Chapter 0: Entry ---- */
+
+.entryContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: var(--space-lg);
+}
+
+.brandMark {
+    font-family: var(--font-heading);
+    font-size: 0.75rem;
+    letter-spacing: 0.3em;
+    color: var(--text-muted);
+    text-transform: uppercase;
+}
+
+.title {
+    font-size: clamp(3rem, 8vw, 6rem);
+    line-height: 0.9;
+}
+
+.tagline {
+    font-family: var(--font-body);
+    font-size: 1.15rem;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.65);
+    line-height: 1.8;
+}
+
+.emphasis {
+    color: var(--primary-white);
+    font-weight: 400;
+}
+
+/* ---- Narrative Screen ---- */
+
+.narrativeContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 640px;
+    gap: var(--space-md);
+}
+
+/* ---- Chapter Screens ---- */
+
+.chapterContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 800px;
+    gap: var(--space-xl);
+}
+
+.chapterHeader {
+    text-align: center;
+}
+
+.chapterLabel {
+    font-family: var(--font-heading);
+    font-size: 0.7rem;
+    letter-spacing: 0.35em;
+    color: var(--primary-blue);
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: var(--space-sm);
+}
+
+.sceneDesc {
+    margin-top: var(--space-sm);
+    font-size: 1rem;
+    color: var(--text-muted);
+}
+
+/* ---- Card Grid ---- */
+
+.cardGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-md);
+    width: 100%;
+}
+
+.cardTitle {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-bottom: var(--space-xs);
+    text-transform: uppercase;
+    color: var(--primary-white);
+}
+
+.cardDesc {
+    font-family: var(--font-body);
+    font-weight: 300;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
+/* ============================================================
+   Career Mirror Results
+   ============================================================ */
+
+.mirrorContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 720px;
+    width: 100%;
+    gap: var(--space-lg);
+}
+
+.archetypeTitle {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    background: linear-gradient(135deg, var(--primary-blue), var(--primary-purple), var(--secondary-teal));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.archetypeDesc {
+    font-family: var(--font-body);
+    font-weight: 300;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 560px;
+}
+
+/* Stats row */
+.mirrorStats {
+    display: flex;
+    gap: var(--space-lg);
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.statCard {
+    background: var(--bg-surface);
+    border: 1px solid rgba(63, 76, 120, 0.3);
+    border-radius: var(--radius-lg);
+    padding: var(--space-lg) var(--space-xl);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-xs);
+    min-width: 140px;
+}
+
+.statNumber {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--secondary-lime);
+}
+
+.statLabel {
+    font-family: var(--font-ui);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+}
+
+/* Trait bars */
+.traitBars {
+    width: 100%;
+    text-align: left;
+}
+
+.traitBars h3 {
+    margin-bottom: var(--space-md);
+    text-align: center;
+}
+
+.traitRow {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    margin-bottom: var(--space-sm);
+}
+
+.traitName {
+    font-family: var(--font-ui);
+    font-size: 0.85rem;
+    width: 120px;
+    text-align: right;
+    color: rgba(255, 255, 255, 0.7);
+    flex-shrink: 0;
+}
+
+.traitBarBg {
+    flex: 1;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+}
+
+.traitBarFill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary-blue), var(--secondary-teal));
+    border-radius: var(--radius-full);
+    transition: width var(--transition-slow);
+}
+
+.traitScore {
+    font-family: var(--font-ui);
+    font-size: 0.85rem;
+    color: var(--text-accent);
+    width: 40px;
+}
+
+/* Key moments */
+.keyMoments {
+    width: 100%;
+    text-align: left;
+}
+
+.keyMoments h3 {
+    text-align: center;
+    margin-bottom: var(--space-md);
+}
+
+.keyMoments ul {
+    list-style: none;
+    padding: 0;
+}
+
+.keyMoments li {
+    font-family: var(--font-body);
+    font-weight: 300;
+    padding: var(--space-sm) var(--space-md);
+    border-left: 2px solid var(--primary-blue);
+    margin-bottom: var(--space-sm);
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Emotional journey */
+.emotionalJourney {
+    width: 100%;
+}
+
+.emotionalJourney h3 {
+    text-align: center;
+    margin-bottom: var(--space-md);
+}
+
+.journeyPath {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    justify-content: center;
+}
+
+.journeyStep {
+    background: var(--bg-surface);
+    border: 1px solid rgba(63, 76, 120, 0.2);
+    border-radius: var(--radius-md);
+    padding: var(--space-xs) var(--space-md);
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* ---- Responsive ---- */
+
+@media (max-width: 600px) {
+    .cardGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .fullscreen {
+        padding: var(--space-lg) var(--space-md);
+    }
+
+    .mirrorStats {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .traitName {
+        width: 80px;
+        font-size: 0.75rem;
+    }
+
+    .dialogueOverlay {
+        padding: var(--space-md);
+        bottom: var(--space-md);
+    }
+
+    .dialogueChoices {
+        flex-direction: column;
+    }
+}
+
+/* ============================================================
+   Dialogue Overlay (Ch2 Game) — Premium Polish
+   ============================================================ */
+
+.dialogueOverlay {
+    position: absolute;
+    bottom: var(--space-xl);
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 900px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    z-index: 10;
+    pointer-events: none;
+}
+
+.dialogueBox {
+    background: rgba(10, 15, 25, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(20px);
+    pointer-events: auto;
+    position: relative;
+    border-top: 2px solid var(--primary-blue);
+}
+
+.dialogueSpeaker {
+    position: absolute;
+    top: -14px;
+    left: 32px;
+    background: linear-gradient(135deg, var(--primary-blue), var(--primary-purple));
+    color: var(--primary-white);
+    font-family: var(--font-heading);
+    font-size: 0.65rem;
+    font-weight: 800;
+    padding: 4px 14px;
+    border-radius: var(--radius-full);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.dialogueText {
+    font-family: var(--font-body);
+    font-size: 1.25rem;
+    font-weight: 300;
+    line-height: 1.7;
+    color: var(--primary-white);
+    margin: 0;
+    letter-spacing: -0.01em;
+}
+
+.dialogueChoices {
+    display: flex;
+    gap: var(--space-md);
+    pointer-events: auto;
+    width: 100%;
+}
+
+.dialogueBtn {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: var(--space-lg);
+    border-radius: var(--radius-md);
+    color: var(--primary-white);
+    font-family: var(--font-body);
+    text-align: left;
+    transition: all var(--transition-normal);
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.dialogueBtn:hover:not(:disabled) {
+    background: rgba(255, 255, 255, 0.07);
+    border-color: var(--primary-blue);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+.dialogueBtn:active:not(:disabled) {
+    transform: translateY(-1px);
+}
+
+.btnLabel {
+    display: block;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: var(--primary-blue);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.btnDesc {
+    display: block;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.4;
+}

@@ -1,0 +1,81 @@
+{
+    "version": "1.0.0",
+    "clips": {
+        "ambient_hum": {
+            "src": "/audio/ambient_hum.mp3",
+            "type": "ambient",
+            "gain": 0.3,
+            "loop": true,
+            "fadeInMs": 2000
+        },
+        "subtle_click": {
+            "src": "/audio/subtle_click.mp3",
+            "type": "one-shot",
+            "gain": 0.6,
+            "loop": false
+        },
+        "silence_beat": {
+            "src": null,
+            "type": "silence",
+            "durationMs": 1500,
+            "duckOthersTo": 0.0
+        },
+        "notification_slack": {
+            "src": "/audio/notification_slack.mp3",
+            "type": "one-shot",
+            "gain": 0.7,
+            "loop": false
+        },
+        "notification_email": {
+            "src": "/audio/notification_email.mp3",
+            "type": "one-shot",
+            "gain": 0.5,
+            "loop": false
+        },
+        "notification_phone": {
+            "src": "/audio/notification_phone.mp3",
+            "type": "one-shot",
+            "gain": 0.6,
+            "loop": false
+        },
+        "ambient_office": {
+            "src": "/audio/ambient_office.mp3",
+            "type": "ambient",
+            "gain": 0.2,
+            "loop": true,
+            "fadeInMs": 3000
+        },
+        "tension_low": {
+            "src": "/audio/tension_low.mp3",
+            "type": "ambient",
+            "gain": 0.25,
+            "loop": true,
+            "fadeInMs": 1500
+        },
+        "positive_resolve": {
+            "src": "/audio/positive_resolve.mp3",
+            "type": "one-shot",
+            "gain": 0.5,
+            "loop": false
+        },
+        "negative_weight": {
+            "src": "/audio/negative_weight.mp3",
+            "type": "one-shot",
+            "gain": 0.4,
+            "loop": false
+        },
+        "chapter_transition": {
+            "src": "/audio/chapter_transition.mp3",
+            "type": "one-shot",
+            "gain": 0.6,
+            "loop": false,
+            "duckOthersTo": 0.1
+        },
+        "ambient_silence": {
+            "src": null,
+            "type": "silence",
+            "durationMs": 3000,
+            "duckOthersTo": 0.0
+        }
+    }
+}

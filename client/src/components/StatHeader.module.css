@@ -1,0 +1,198 @@
+.headerContainer {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-xs);
+    padding: var(--space-xs) var(--space-lg);
+    user-select: none;
+    position: relative;
+    z-index: 50;
+}
+
+.statItem {
+    position: relative;
+}
+
+.statGlow {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), transparent);
+    border-radius: var(--radius-lg);
+    filter: blur(4px);
+    transition: filter var(--transition-fast);
+}
+
+.statItem:hover .statGlow {
+    filter: blur(12px);
+}
+
+.statInner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: clamp(8px, 1.5vw, 16px);
+    background: rgba(30, 41, 59, 0.7);
+    backdrop-filter: blur(24px);
+    border-radius: var(--radius-lg);
+    padding: clamp(4px, 1vh, 8px) clamp(12px, 2vw, 20px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+}
+
+.accentBar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--accent-start, #fff), var(--accent-end, #ccc));
+}
+
+.iconBox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: clamp(24px, 3.5vh, 32px);
+    height: clamp(24px, 3.5vh, 32px);
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    font-size: clamp(14px, 2vh, 18px);
+}
+
+.infoBox {
+    display: flex;
+    flex-direction: column;
+}
+
+.label {
+    font-size: clamp(8px, 1vh, 11px);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 0;
+}
+
+.valueContainer {
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+}
+
+.value {
+    font-size: clamp(16px, 2.2vh, 20px);
+    font-weight: 900;
+    color: white;
+    letter-spacing: -0.01em;
+}
+
+.decorativeIcon {
+    position: absolute;
+    right: -8px;
+    bottom: -8px;
+    opacity: 0.03;
+    scale: 2;
+    rotate: 12deg;
+    pointer-events: none;
+    font-size: 32px;
+}
+
+.divider {
+    width: 1px;
+    height: 48px;
+    background: rgba(255, 255, 255, 0.1);
+    align-self: center;
+}
+
+@media (max-width: 1024px) {
+    .divider {
+        display: none;
+    }
+}
+
+/* Accent Gradients */
+.conf {
+    --accent-start: #facc15;
+    --accent-end: #f97316;
+}
+
+.health {
+    --accent-start: #f87171;
+    --accent-end: #e11d48;
+}
+
+.worklife {
+    --accent-start: #60a5fa;
+    --accent-end: #4f46e5;
+}
+
+.exp {
+    --accent-start: #c084fc;
+    --accent-end: #c026d3;
+}
+
+.rep {
+    --accent-start: #22d3ee;
+    --accent-end: #2563eb;
+}
+
+.savings {
+    --accent-start: #4ade80;
+    --accent-end: #059669;
+}
+
+.salary {
+    --accent-start: #34d399;
+    --accent-end: #0d9488;
+}
+
+/* V4 Sidebar Integration */
+.sidebarStats {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.sidebarGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.sidebarStats .statItem {
+    background: transparent;
+    border: none;
+    padding: 0;
+    box-shadow: none;
+}
+
+.sidebarStats .statInner {
+    background: transparent;
+    backdrop-filter: none;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    gap: 12px;
+}
+
+.sidebarStats .iconBox {
+    width: 28px;
+    height: 28px;
+    background: rgba(59, 130, 246, 0.1);
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    color: var(--primary-blue);
+    opacity: 1;
+    font-size: 14px;
+}
+
+.sidebarStats .value {
+    font-size: 16px;
+    color: var(--text-primary);
+}
+
+.sidebarStats .label {
+    font-size: 9px;
+    color: var(--text-muted);
+}

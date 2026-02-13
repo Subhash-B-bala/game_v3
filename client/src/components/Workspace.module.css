@@ -1,0 +1,206 @@
+.v4Container {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    overflow: hidden;
+    font-family: var(--font-body);
+}
+
+/* Sidebar Styling */
+.v4Sidebar {
+    width: 320px;
+    height: 100%;
+    background: #0f172a;
+    border-right: 1px solid var(--border-strong);
+    display: flex;
+    flex-direction: column;
+    z-index: 100;
+}
+
+.sidebarBrand {
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 14px;
+    letter-spacing: 0.2em;
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.brandDot {
+    width: 8px;
+    height: 8px;
+    background: var(--primary-blue);
+    border-radius: 50%;
+    box-shadow: 0 0 12px var(--primary-blue);
+}
+
+.profileSection {
+    padding: 32px 24px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.avatarBox {
+    width: 80px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 50%;
+    border: 1px solid var(--border-strong);
+    padding: 2px;
+    overflow: hidden;
+}
+
+.profileMeta {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.metaLabel {
+    font-size: 8px;
+    font-weight: 800;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 2px;
+}
+
+.userNameDisplay {
+    font-family: var(--font-heading);
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--primary-blue);
+    letter-spacing: -0.01em;
+}
+
+.customAvatar {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.customAvatar svg {
+    width: 100%;
+    height: 100%;
+    fill: var(--primary-blue);
+}
+
+.metaStatus {
+    font-size: 12px;
+    font-weight: 900;
+    color: var(--primary-blue);
+    letter-spacing: 0.05em;
+}
+
+.sidebarNav {
+    flex: 1;
+    overflow-y: auto;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.sidebarNav::-webkit-scrollbar {
+    width: 4px;
+}
+
+.sidebarNav::-webkit-scrollbar-thumb {
+    background: var(--border-subtle);
+}
+
+.navGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.groupHeader {
+    font-size: 10px;
+    font-weight: 900;
+    color: var(--text-muted);
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+}
+
+.sidebarFooter {
+    padding: 16px 24px;
+    border-top: 1px solid var(--border-subtle);
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.versionTag {
+    font-size: 9px;
+    font-family: monospace;
+    color: var(--text-muted);
+    opacity: 0.5;
+}
+
+/* Main Content Styling */
+.v4Main {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: var(--bg-primary);
+    position: relative;
+}
+
+.panelHeader {
+    height: 64px;
+    padding: 0 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-subtle);
+    background: rgba(255, 255, 255, 0.01);
+}
+
+.breadcrumbs {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.1em;
+}
+
+.crumbDivider {
+    color: var(--text-muted);
+    opacity: 0.3;
+}
+
+.crumbActive {
+    color: var(--primary-blue);
+}
+
+.systemTime {
+    font-family: monospace;
+    font-size: 14px;
+    color: var(--text-muted);
+    letter-spacing: 0.1em;
+}
+
+.stageContent {
+    flex: 1;
+    padding: 40px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.appContainer {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}

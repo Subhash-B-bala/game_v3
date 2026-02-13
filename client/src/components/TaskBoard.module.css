@@ -1,0 +1,93 @@
+.boardContainer {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background: var(--bg-surface);
+    color: var(--text-primary);
+    font-family: var(--font-ui);
+}
+
+.boardHeader {
+    padding: var(--space-lg);
+    border-bottom: 1px solid var(--os-border);
+}
+
+.kanban {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-lg);
+    padding: var(--space-lg);
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+.columnHeader {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    letter-spacing: 0.05em;
+    margin-bottom: var(--space-xs);
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--os-border);
+    padding: var(--space-md);
+    border-radius: var(--radius-md);
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.card.active {
+    background: rgba(59, 130, 246, 0.15);
+    border-color: var(--primary-blue);
+    color: white;
+    box-shadow: 0 8px 32px rgba(59, 130, 246, 0.2);
+}
+
+.card.done {
+    opacity: 0.5;
+    text-decoration: line-through;
+}
+
+.cardTag {
+    display: inline-block;
+    background: rgba(59, 130, 246, 0.1);
+    color: var(--primary-blue);
+    font-size: 0.65rem;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+}
+
+.choices {
+    margin-top: var(--space-lg);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.choiceBtn {
+    background: var(--primary-blue);
+    border: none;
+    color: white;
+    padding: var(--space-sm);
+    border-radius: var(--radius-sm);
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.choiceBtn:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.1);
+}

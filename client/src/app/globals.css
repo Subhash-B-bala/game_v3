@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+:root {
+  /* Brand: Codebasics Identity */
+  --primary: #3b82f6;
+  /* CBSE Blue */
+  --primary-hover: #2563eb;
+  --secondary: #6f53c1;
+  /* CBSE Purple */
+  --highlight: #d7ef3f;
+  /* Lime Yellow */
+
+  /* Neutrals: Deep Space */
+  --background: #181830;
+  /* Main Bg */
+  --surface: #1B1E28;
+  /* Darker Panel */
+  --surface-highlight: #2D323E;
+  /* Lighter Panel */
+
+  --foreground: #ffffff;
+  --foreground-muted: #94a3b8;
+
+  /* Status / Secondary Brand */
+  --success: #20c997;
+  /* Teal Green */
+  --warning: #fd7e14;
+  /* Brand Orange */
+  --error: #d63384;
+  /* Brand Pink */
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-kanit), sans-serif;
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-saira), sans-serif;
+  text-transform: uppercase;
+}
+
+/* Simple Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1e293b;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #475569;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}

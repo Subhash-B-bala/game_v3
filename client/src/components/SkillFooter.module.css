@@ -1,0 +1,180 @@
+.footerWrapper {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: var(--space-xs) var(--space-lg);
+    z-index: 50;
+    pointer-events: none;
+}
+
+.footerInner {
+    max-width: min(1200px, 95vw);
+    margin: 0 auto;
+    background: rgba(30, 41, 59, 0.7);
+    backdrop-filter: blur(24px);
+    border-radius: var(--radius-lg);
+    padding: clamp(12px, 2vh, 24px) clamp(16px, 3vw, 32px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 -20px 50px rgba(0, 0, 0, 0.5);
+    pointer-events: auto;
+}
+
+.gridSystem {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-2xl);
+}
+
+@media (max-width: 768px) {
+    .gridSystem {
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
+    }
+}
+
+.domainSection {
+    display: flex;
+    flex-direction: column;
+}
+
+.domainHeader {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    margin-bottom: var(--space-md);
+    opacity: 0.6;
+}
+
+.domainLine {
+    height: 1px;
+    flex: 1;
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.2));
+}
+
+.domainLineLeft {
+    background: linear-gradient(to left, transparent, rgba(255, 255, 255, 0.2));
+}
+
+.domainLabel {
+    font-size: clamp(9px, 1.2vh, 11px);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.skillGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-md);
+}
+
+@media (min-width: 640px) {
+    .skillGridTechnical {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .skillGridProfessional {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* StatBar styles */
+.barItem {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.barMeta {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 0 4px;
+}
+
+.barLabel {
+    font-size: 9px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.barValue {
+    font-size: 11px;
+    font-family: monospace;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.barTrack {
+    height: clamp(6px, 1vh, 8px);
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 9999px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    overflow: hidden;
+}
+
+.barFill {
+    height: 100%;
+    border-radius: 9999px;
+    background: linear-gradient(to right, var(--bar-start, #fff), var(--bar-end, #ccc));
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.1);
+}
+
+/* Color Tokens */
+.blue {
+    --bar-start: #3b82f6;
+    --bar-end: #4f46e5;
+}
+
+.green {
+    --bar-start: #10b981;
+    --bar-end: #0d9488;
+}
+
+.purple {
+    --bar-start: #a855f7;
+    --bar-end: #c026d3;
+}
+
+.yellow {
+    --bar-start: #facc15;
+    --bar-end: #f97316;
+}
+
+.red {
+    --bar-start: #f43f5e;
+    --bar-end: #e11d48;
+}
+
+/* V4 Sidebar Integration */
+.sidebarSkills {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.vGrid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.sidebarSkills .barItem {
+    padding: 0;
+}
+
+.sidebarSkills .barLabel {
+    font-size: 10px;
+}
+
+.sidebarSkills .barValue {
+    font-size: 11px;
+}
+
+.sidebarSkills .barTrack {
+    height: 4px;
+    background: rgba(255, 255, 255, 0.12);
+}

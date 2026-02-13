@@ -1,0 +1,232 @@
+.onboardingOverlay {
+    position: fixed;
+    inset: 0;
+    background: #09090b;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-ui);
+    color: var(--text-primary);
+}
+
+.stageWrapper {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.simText {
+    font-family: var(--font-heading);
+    font-size: 14px;
+    letter-spacing: 0.3em;
+    color: var(--primary-blue);
+    text-align: center;
+}
+
+.progressBar {
+    height: 4px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-subtle);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.progressFill {
+    height: 100%;
+    background: var(--primary-blue);
+    box-shadow: 0 0 20px var(--primary-blue);
+}
+
+.logContainer {
+    font-family: monospace;
+    font-size: 11px;
+    color: var(--text-muted);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.logLine {
+    opacity: 0.8;
+}
+
+/* Identity Form */
+.identityForm {
+    width: 440px;
+    background: #111114;
+    border: 1px solid var(--border-strong);
+    padding: 48px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.protocolId {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: var(--primary-blue);
+    font-weight: 800;
+}
+
+.formTitle {
+    font-family: var(--font-heading);
+    font-size: 28px;
+    margin-top: 8px;
+    letter-spacing: -0.02em;
+}
+
+.inputGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.label {
+    font-size: 10px;
+    font-weight: 800;
+    color: var(--text-muted);
+    letter-spacing: 0.1em;
+}
+
+.textInput {
+    background: #09090b;
+    border: 1px solid var(--border-subtle);
+    padding: 16px;
+    color: white;
+    border-radius: 4px;
+    font-family: var(--font-body);
+    font-size: 16px;
+    transition: all 0.2s ease;
+}
+
+.textInput:focus {
+    outline: none;
+    border-color: var(--primary-blue);
+    background: #111114;
+}
+
+.uploadArea {
+    height: 120px;
+    border: 1px dashed var(--border-strong);
+    border-radius: 4px;
+    background: #09090b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.uploadArea:hover {
+    border-color: var(--primary-blue);
+    background: rgba(59, 130, 246, 0.05);
+}
+
+.uploadPlaceholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    color: var(--text-muted);
+    font-size: 12px;
+}
+
+.uploadIcon {
+    font-size: 24px;
+    color: var(--primary-blue);
+}
+
+.previewContainer {
+    width: 80px;
+    height: 80px;
+}
+
+.previewContainer svg {
+    width: 100%;
+    height: 100%;
+    fill: var(--primary-blue);
+}
+
+.proceedBtn {
+    background: var(--primary-blue);
+    color: white;
+    padding: 18px;
+    font-family: var(--font-heading);
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.proceedBtn:hover:not(:disabled) {
+    background: #2563eb;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
+}
+
+.proceedBtn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+/* Handshake */
+.handshakeStage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    text-align: center;
+}
+
+.handshakePulse {
+    width: 80px;
+    height: 80px;
+    background: var(--primary-blue);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.95);
+        opacity: 1;
+        box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7);
+    }
+
+    70% {
+        transform: scale(1);
+        opacity: 0.5;
+        box-shadow: 0 0 0 40px rgba(59, 130, 246, 0);
+    }
+
+    100% {
+        transform: scale(0.95);
+        opacity: 1;
+        box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
+    }
+}
+
+.v4Logo {
+    font-family: var(--font-heading);
+    font-size: 14px;
+    letter-spacing: 0.5em;
+    color: var(--primary-blue);
+    font-weight: 900;
+}
+
+.handshakeText {
+    font-family: var(--font-heading);
+    font-size: 24px;
+    line-height: 1.4;
+    letter-spacing: -0.01em;
+}
+
+.accentText {
+    color: var(--primary-blue);
+}

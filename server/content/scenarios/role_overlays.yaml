@@ -1,0 +1,202 @@
+# ============================================================
+# Role Overlay: Data Analyst
+# Chapter 2 — Interview scene gets role-specific questions
+# ============================================================
+# ------------------------------------------------------------
+# Interview Scenarios (Refined Situational)
+# ------------------------------------------------------------
+scenarioId: ch2_interview
+role: data_analyst
+actions:
+  - actionId: interview_depth
+    label: "The Seasonality Challenge"
+    description: "Stakeholders blame seasonality for a dip. You know it's a UX change. Present the hard data."
+  - actionId: interview_result_driven
+    label: "Strategic Alignment"
+    description: "Align with the Product Lead's view but propose a shadow-tracking fix to 'confirm' the dip."
+  - actionId: interview_vulnerable
+    label: "The Misinterpreted Chart"
+    description: "Admit to a past time you misread a trend and how you corrected your verification process."
+feedbackVariants:
+  - key: interview_result
+    narrativeText: "The Lead Analyst sits back. 'Most people just nod. I appreciate someone who trusts the cohort data more than the narrative.' You feel the connection click."
+
+---
+
+# ============================================================
+# Role Overlay: Data Engineer
+# Chapter 2 — Interview
+# ============================================================
+scenarioId: ch2_interview
+role: data_engineer
+actions:
+  - actionId: interview_depth
+    label: "The Pipeline Post-Mortem"
+    description: "A critical job failed on a holiday. Defend your decision to re-architect rather than hotfix."
+  - actionId: interview_result_driven
+    label: "Operation Resilience"
+    description: "Prioritize immediate uptime and monitoring over system purity. Show them the SLA impact."
+  - actionId: interview_vulnerable
+    label: "The Broken Hotfix"
+    description: "Detail the technical gap you missed in a past emergency and why it changed your testing culture."
+feedbackVariants:
+  - key: interview_result
+    narrativeText: "The hiring manager nods. 'We care more about how you handle a fire than how you write clean code when everything is fine.' You established technical maturity."
+
+---
+
+# ============================================================
+# Role Overlay: Data Scientist
+# Chapter 2 — Interview
+# ============================================================
+scenarioId: ch2_interview
+role: data_scientist
+actions:
+  - actionId: interview_depth
+    label: "The Leakage Dilemma"
+    description: "The model is great on test data but flawed by feature leakage. Insist on delaying production code."
+  - actionId: interview_result_driven
+    label: "Shadow Deployment"
+    description: "Deploy alongside traditional logic to verify real-world drift before switching fully."
+  - actionId: interview_vulnerable
+    label: "The Overfit Story"
+    description: "Describe a model that looked perfect until it hit real-world noise, and how it humbled your approach."
+feedbackVariants:
+  - key: interview_result
+    narrativeText: "'Metrics are cheap. Integrity is expensive.' The senior scientist looks genuinely impressed by your skepticism."
+
+---
+
+# ============================================================
+# Role Overlay: AI/ML Engineer
+# Chapter 2 — Interview
+# ============================================================
+scenarioId: ch2_interview
+contentVersion: "1.0.0"
+role: ai_ml
+overrides:
+  narrativeSwaps:
+    interview_result: >
+      "Design a recommendation system for 10 million users. You have 2 GPUs and 3 weeks."
+      The constraints are the test. Anyone can dream big with infinite resources.
+      Can you build smart with nothing?
+
+---
+
+# ============================================================
+# Role Overlay: Data Analyst — Ch3 First Task
+# ============================================================
+scenarioId: ch3_first_task
+contentVersion: "1.0.0"
+role: analyst
+overrides:
+  narrativeSwaps:
+    task_result: >
+      Your first dashboard. The exec team will see it Monday.
+      One wrong number and you'll be explaining yourself in a room full of people
+      who don't know what a LEFT JOIN is but definitely know when revenue looks wrong.
+
+---
+
+# ============================================================
+# Role Overlay: Data Engineer — Ch3 First Task
+# ============================================================
+scenarioId: ch3_first_task
+contentVersion: "1.0.0"
+role: data_engineer
+overrides:
+  narrativeSwaps:
+    task_result: >
+      Your first pipeline. Ingesting data from a legacy system that was built
+      before you were in college. The documentation is a 3-year-old Confluence page
+      with a dead link and the note "ask Rajesh (he left)."
+
+---
+
+# ============================================================
+# Role Overlay: Data Scientist — Ch3 First Task
+# ============================================================
+scenarioId: ch3_first_task
+contentVersion: "1.0.0"
+role: data_scientist
+overrides:
+  narrativeSwaps:
+    task_result: >
+      Your first model. The training data has 47 features and nobody can explain
+      what half of them mean. Feature engineering isn't glamorous, but it's where
+      the real work happens.
+
+---
+
+# ============================================================
+# Role Overlay: AI/ML Engineer — Ch3 First Task
+# ============================================================
+scenarioId: ch3_first_task
+contentVersion: "1.0.0"
+role: ai_ml
+overrides:
+  narrativeSwaps:
+    task_result: >
+      Your first deployment. The model works in the notebook. Getting it to work
+      in production is an entirely different war. Latency, memory, versioning —
+      the gap between demo and real is where ML engineers earn their scars.
+
+---
+
+# ============================================================
+# Role Overlay: Data Analyst — Ch4 Ethics
+# ============================================================
+scenarioId: ch4_ethics
+contentVersion: "1.0.0"
+role: analyst
+overrides:
+  narrativeSwaps:
+    ethics_result: >
+      The dashboard shows revenue declining. Your manager wants you to "adjust the timeframe"
+      to make it look like growth. "It's just framing," they say.
+      But you know: the board will make decisions based on what you show them.
+
+---
+
+# ============================================================
+# Role Overlay: Data Engineer — Ch4 Ethics
+# ============================================================
+scenarioId: ch4_ethics
+contentVersion: "1.0.0"
+role: data_engineer
+overrides:
+  narrativeSwaps:
+    ethics_result: >
+      You discovered PII in the analytics pipeline. Social security numbers in plain text.
+      The fix is simple. The question is: do you report it or quietly patch it?
+      One makes you the hero. The other means explaining why nobody caught it sooner.
+
+---
+
+# ============================================================
+# Role Overlay: Data Scientist — Ch4 Ethics
+# ============================================================
+scenarioId: ch4_ethics
+contentVersion: "1.0.0"
+role: data_scientist
+overrides:
+  narrativeSwaps:
+    ethics_result: >
+      Your model has bias. Not subtle bias — the kind that denies loans
+      to certain zip codes at twice the rate. The business loves the accuracy number.
+      The accuracy number doesn't know about fairness.
+
+---
+
+# ============================================================
+# Role Overlay: AI/ML Engineer — Ch4 Ethics
+# ============================================================
+scenarioId: ch4_ethics
+contentVersion: "1.0.0"
+role: ai_ml
+overrides:
+  narrativeSwaps:
+    ethics_result: >
+      The content moderation model is flagging minority language patterns as toxic
+      at 4x the rate. The accuracy metrics look great — on the majority dataset.
+      Your manager wants to ship Friday. The bias fix would take two more sprints.

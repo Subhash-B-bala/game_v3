@@ -1,0 +1,162 @@
+# ============================================================
+# Chapter 1 — Character Creation
+# "Define who you are"
+# ============================================================
+
+# --- Scene 1.2: Background ---
+scenarioId: ch1_setup_background
+contentVersion: "1.0.0"
+chapter: 1
+title: "PROFESSIONAL BACKGROUND"
+description: "Select your educational and professional history."
+
+actions:
+  - actionId: bg_fresher
+    label: "FRESH GRADUATE"
+    description: "CS Degree. High energy, strong theoretical base, no industry experience."
+  - actionId: bg_switcher
+    label: "CAREER SWITCHER"
+    description: "Non-tech background. High soft skills, lower technical base."
+  - actionId: bg_bootcamp
+    label: "BOOTCAMP GRAD"
+    description: "Intensive 6-month program. Practical skills, high debt."
+  - actionId: bg_senior
+    label: "SENIOR PIVOT"
+    description: "5+ years in another tech stack. High reputation, high expectations."
+
+consequenceRules:
+  - actionId: bg_fresher
+    stateDeltas:
+      - variable: energy
+        delta: 0.2
+      - variable: reputation
+        delta: -0.1
+      - variable: networkStrength
+        delta: -0.1
+    immediateFeedback: bg_selected
+
+  - actionId: bg_switcher
+    stateDeltas:
+      - variable: communication
+        delta: 0.2
+      - variable: technical
+        delta: -0.1
+    immediateFeedback: bg_selected
+
+  - actionId: bg_bootcamp
+    stateDeltas:
+      - variable: technical
+        delta: 0.1
+      - variable: loan
+        delta: 10000
+    immediateFeedback: bg_selected
+
+  - actionId: bg_senior
+    stateDeltas:
+      - variable: reputation
+        delta: 0.3
+      - variable: energy
+        delta: -0.2
+    immediateFeedback: bg_selected
+
+feedbackVariants:
+  - key: bg_selected
+    emotionalState: "*"
+    narrativeText: "Background profile initialized. Next: Financial Calibration."
+
+---
+
+# --- Scene 1.3: Financial Situation ---
+scenarioId: ch1_setup_financial
+contentVersion: "1.0.0"
+chapter: 1
+title: "FINANCIAL STATUS"
+description: "Define your current financial pressure and runway."
+
+actions:
+  - actionId: fin_comfortable
+    label: "COMFORTABLE"
+    description: "High savings. Low immediate pressure to find a job."
+  - actionId: fin_middle
+    label: "MIDDLE CLASS"
+    description: "Standard savings (6 months runway). Moderate pressure."
+  - actionId: fin_dependent
+    label: "SELF-DEPENDENT"
+    description: "Month-to-month. High urgency. Bonus 'Grind' multiplier."
+
+consequenceRules:
+  - actionId: fin_comfortable
+    stateDeltas:
+      - variable: savings
+        delta: 20000
+      - variable: stress
+        delta: -0.2
+    immediateFeedback: fin_selected
+
+  - actionId: fin_middle
+    stateDeltas:
+      - variable: savings
+        delta: 5000
+    immediateFeedback: fin_selected
+
+  - actionId: fin_dependent
+    stateDeltas:
+      - variable: savings
+        delta: 500
+      - variable: stress
+        delta: 0.3
+    immediateFeedback: fin_selected
+
+feedbackVariants:
+  - key: fin_selected
+    emotionalState: "*"
+    narrativeText: "Financial runways modeled. Final Step: Career Track Selection."
+
+---
+
+# --- Scene 1.4: Role Track ---
+scenarioId: ch1_setup_role
+contentVersion: "1.0.0"
+chapter: 1
+title: "CAREER TRACK"
+description: "Select your primary technical specialization."
+
+actions:
+  - actionId: role_analyst
+    label: "DATA ANALYTICS"
+    description: "Insights, SQL, Visualization, Business Strategy."
+  - actionId: role_engineer
+    label: "DATA ENGINEERING"
+    description: "Pipelines, Infrastructure, Cloud, Scalability."
+  - actionId: role_ai
+    label: "AI / ML ENGINEER"
+    description: "Models, Algorithms, Neural Networks, Automation."
+
+consequenceRules:
+  - actionId: role_analyst
+    stateDeltas:
+      - variable: sql
+        delta: 0.2
+    immediateFeedback: role_selected
+
+  - actionId: role_engineer
+    stateDeltas:
+      - variable: python
+        delta: 0.1
+      - variable: engineering
+        delta: 0.1
+    immediateFeedback: role_selected
+
+  - actionId: role_ai
+    stateDeltas:
+      - variable: python
+        delta: 0.1
+      - variable: ml
+        delta: 0.1
+    immediateFeedback: role_selected
+
+feedbackVariants:
+  - key: role_selected
+    emotionalState: "*"
+    narrativeText: "Career Track Confirmed. Initializing Simulation..."
+    audioCue: silence_beat

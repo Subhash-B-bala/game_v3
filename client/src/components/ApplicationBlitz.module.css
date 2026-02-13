@@ -1,0 +1,154 @@
+.stage {
+    width: 100%;
+    max-width: 500px;
+    background: var(--bg-surface);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    box-shadow: 0 32px 64px rgba(0, 0, 0, 0.5);
+    position: relative;
+    z-index: 10;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: var(--space-2xl);
+    padding: var(--space-md);
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: var(--radius-md);
+}
+
+.statItem {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+    min-width: 80px;
+}
+
+.statLabel {
+    font-family: var(--font-heading);
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    letter-spacing: 0.05em;
+}
+
+.energyBar {
+    height: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+    width: 100px;
+}
+
+.energyFill {
+    height: 100%;
+    transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.timer {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--accent-warning);
+}
+
+.counter {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--primary-blue);
+}
+
+.jobArea {
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.jobCard {
+    width: 100%;
+    background: #262650;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-md);
+    padding: var(--space-xl);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.role {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    margin-bottom: var(--space-xs);
+    color: var(--primary-white);
+}
+
+.company {
+    color: var(--primary-blue);
+    font-family: var(--font-ui);
+    font-weight: 700;
+    margin-bottom: var(--space-lg);
+}
+
+.fitIndicator {
+    margin-bottom: var(--space-xl);
+}
+
+.fitIndicator span {
+    display: block;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    margin-bottom: var(--space-xs);
+}
+
+.fitValue {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    font-weight: 800;
+}
+
+.actions {
+    display: flex;
+    gap: var(--space-md);
+}
+
+.skipBtn {
+    flex: 1;
+    padding: var(--space-md);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-sm);
+    color: var(--text-muted);
+    font-weight: 700;
+}
+
+.applyBtn {
+    flex: 2;
+    padding: var(--space-md);
+    background: var(--primary-blue);
+    border-radius: var(--radius-sm);
+    color: white;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.applyBtn:hover:not(:disabled) {
+    background: var(--accent-cta-hover);
+}
+
+.applyBtn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.gameOver {
+    text-align: center;
+}
+
+.gameOver h2 {
+    font-size: 2.5rem;
+    color: var(--secondary-lime);
+    margin-bottom: var(--space-md);
+}

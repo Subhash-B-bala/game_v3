@@ -1,0 +1,26 @@
+# ============================================================
+# Chapter 0 — Entry
+# "Set tone and seriousness"
+# ============================================================
+scenarioId: ch0_entry
+contentVersion: "1.0.0"
+chapter: 0
+title: "Entry"
+
+actions:
+  - actionId: start_simulation
+    label: "Start Simulation"
+
+consequenceRules:
+  - actionId: start_simulation
+    stateDeltas: []
+    immediateFeedback: entry_begin
+
+feedbackVariants:
+  - key: entry_begin
+    emotionalState: "*"
+    narrativeText: >
+      A CODEBASICS PRODUCTION.
+      100+ Scenarios. Real Career Paths.
+      Your decisions shape your destiny.
+    audioCue: silence_beat

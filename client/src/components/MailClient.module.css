@@ -1,0 +1,220 @@
+.mailContainer {
+    width: 100%;
+    margin: 0 auto;
+    font-family: var(--font-inter), sans-serif;
+    color: var(--foreground);
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--surface);
+    border: 1px solid var(--surface-highlight);
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+.mailHeader {
+    padding: 16px 24px;
+    background: var(--background);
+    border-bottom: 1px solid var(--surface-highlight);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.headerMain {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.mainTitle {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--foreground);
+    letter-spacing: -0.02em;
+}
+
+.authInfo {
+    font-size: 13px;
+    color: var(--foreground-muted);
+    font-weight: 500;
+}
+
+.profileHeader {
+    padding: 20px 24px;
+    background: var(--surface);
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    border-bottom: 1px solid var(--surface-highlight);
+}
+
+.senderMeta {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.senderName {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--foreground);
+    letter-spacing: -0.02em;
+}
+
+.senderRole {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--foreground-muted);
+}
+
+.urgentTag {
+    background: rgba(239, 68, 68, 0.1);
+    color: #ef4444;
+    border: 1px solid rgba(239, 68, 68, 0.2);
+    padding: 6px 12px;
+    border-radius: 9999px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.mailBody {
+    padding: 24px 24px;
+    background: var(--surface);
+    min-height: 120px;
+}
+
+.transmitLabel {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.messageContent {
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--foreground);
+    max-width: 65ch;
+}
+
+.scenarioDirective {
+    background: rgba(59, 130, 246, 0.1);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    padding: 20px;
+    margin-bottom: 32px;
+    border-radius: 12px;
+}
+
+.directiveLabel {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.directiveText {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--foreground);
+    line-height: 1.5;
+}
+
+.footerActions {
+    padding: 24px;
+    background: var(--background);
+    border-top: 1px solid var(--surface-highlight);
+}
+
+.actionHeader {
+    margin-bottom: 20px;
+}
+
+.actionLabel {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--foreground-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.replyGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.replyBtn {
+    padding: 16px 20px;
+    background: var(--surface);
+    border: 1px solid var(--surface-highlight);
+    border-radius: 12px;
+    color: var(--foreground);
+    text-align: left;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    position: relative;
+}
+
+.replyBtn:hover {
+    background: var(--primary);
+    border-color: var(--primary);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.3);
+}
+
+.btnTitle {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    display: block;
+    color: var(--foreground);
+}
+
+.btnDesc {
+    font-size: 13px;
+    color: var(--foreground-muted);
+    line-height: 1.5;
+}
+
+.replyBtn:hover .btnDesc {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.arrow {
+    position: absolute;
+    right: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: opacity 0.2s;
+    color: white;
+}
+
+.replyBtn:hover .arrow {
+    opacity: 1;
+}
+
+.continueBtn {
+    grid-column: span 2;
+    padding: 16px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.2s;
+}
+
+.continueBtn:hover {
+    background: var(--primary-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
