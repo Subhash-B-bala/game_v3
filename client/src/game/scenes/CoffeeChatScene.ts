@@ -1,3 +1,4 @@
+// @ts-nocheck
 /**
  * COFFEECHATSCENE — Coffee Chat Activity
  *

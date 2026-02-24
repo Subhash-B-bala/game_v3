@@ -65,6 +65,8 @@ export default function StrategicBriefing() {
 
     const currentData = BRIEFING_STEPS[step];
 
+    if (!currentData) return null;
+
     return (
         <div className="min-h-screen bg-[#020617] flex items-center justify-center p-6 font-sans">
             <div className="max-w-xl w-full">
@@ -93,7 +95,7 @@ export default function StrategicBriefing() {
 
                         <div className="relative z-10">
                             <div className="mb-8 p-4 w-20 h-20 bg-white/5 border border-white/10 rounded-2xl flex items-center justify-center">
-                                {currentData.icon}
+                                {currentData?.icon}
                             </div>
 
                             <div className="mb-2 flex items-center gap-2">

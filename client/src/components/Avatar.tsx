@@ -6,7 +6,7 @@ export type AvatarMood = 'happy' | 'sad' | 'worried' | 'neutral';
 export type AvatarType =
     | 'fresher' | 'analyst' | 'engineer' | 'manager' | 'mentor'
     | 'scammer' | 'stressed' | 'success' | 'recruiter'
-    | 'family' | 'intl' | 'founder' | 'peer' | 'codebasics';
+    | 'family' | 'intl' | 'founder' | 'peer' | 'codebasics' | 'system';
 
 interface AvatarProps {
     type: AvatarType;
@@ -63,7 +63,8 @@ const Avatar: React.FC<AvatarProps> = ({ type, size = 64, mood = 'neutral', clas
         family: { skin: '#FFE0BD', hair: '#4A3728', acc: 'heart' },
         intl: { skin: '#FFCD94', hair: '#333', acc: 'globe' },
         founder: { skin: '#FFE0BD', hair: '#333', acc: 'bulb' },
-        peer: { skin: '#FFCD94', hair: '#5D4037', acc: 'glasses' }, // Simple distinct look
+        peer: { skin: '#FFCD94', hair: '#5D4037', acc: 'glasses' },
+        system: { skin: '#B0BEC5', hair: '#37474F', acc: 'none' }, // Robot/system avatar
     };
     const c = configs[type] || configs.analyst;
 

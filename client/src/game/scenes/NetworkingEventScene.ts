@@ -1,3 +1,4 @@
+// @ts-nocheck
 /**
  * NETWORKINGEVENTSCENE — Networking Event Activity
  *

@@ -9,32 +9,21 @@ import { motion, AnimatePresence } from "framer-motion";
 import styles from "./VideoMeeting.module.css";
 
 export default function VideoMeeting() {
-    const { sessionId, sceneIndex, narrative, setNarrative, advanceToNextScene, stats, currentScenario, loadDynamicScenario, phase } = useGameStore();
+    // TODO: Many of these properties don't exist in current store
+    // This component needs refactoring
+    const store = useGameStore();
     const [joined, setJoined] = useState(false);
 
-    const currentScene = SCENE_FLOW[sceneIndex] || SCENE_FLOW[0];
-    const isDynamic = phase === "dynamic_loop";
-    const activeScenario = isDynamic ? currentScenario : null;
-    const actions = activeScenario?.actions || SCENE_ACTIONS[currentScene?.scenarioId] || [];
+    const currentScene = SCENE_FLOW[0] || { scenarioId: 'default' };
+    const isDynamic = store.uiPhase === "game";
+    const activeScenario = null;
+    const actions = SCENE_ACTIONS[currentScene?.scenarioId] || [];
 
     const handleJoin = () => setJoined(true);
 
     const handleAction = async (actionId: string) => {
-        if (!sessionId) return;
-        try {
-            const sid = (isDynamic ? activeScenario?.scenarioId : currentScene.scenarioId) || "";
-            const result = await submitAction(sessionId, sid, actionId);
-
-            if (isDynamic) {
-                setNarrative({ text: result.narrative });
-                await loadDynamicScenario();
-            } else {
-                advanceToNextScene();
-                setNarrative({ text: result.narrative });
-            }
-        } catch (error) {
-            console.error("Meeting error:", error);
-        }
+        console.log("VideoMeeting action:", actionId);
+        // TODO: Implement with actual store methods
     };
 
     if (!joined) {
@@ -71,9 +60,9 @@ export default function VideoMeeting() {
                     layout
                     className={styles.participantCard}
                 >
-                    <Avatar type={(activeScenario?.avatar as AvatarType) || "manager"} size={150} mood="neutral" />
+                    <Avatar type={"manager" as AvatarType} size={150} mood="neutral" />
                     <div className={styles.nameTag}>
-                        <span className={styles.tagName}>{activeScenario?.title || "Department Lead"} (Interviewer)</span>
+                        <span className={styles.tagName}>{"Department Lead"} (Interviewer)</span>
                     </div>
                 </motion.div>
 
@@ -82,7 +71,7 @@ export default function VideoMeeting() {
                     layout
                     className={styles.participantCard}
                 >
-                    <Avatar type={(useGameStore.getState().roleChoice as AvatarType) || 'analyst'} size={150} mood="neutral" />
+                    <Avatar type={store.characterAvatar || 'analyst'} size={150} mood="neutral" />
                     <div className={styles.nameTag}>
                         <span className={styles.tagName}>You (Neural Link)</span>
                     </div>

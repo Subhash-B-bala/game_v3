@@ -1,0 +1,321 @@
+[
+    {
+        "id": "jh1",
+        "phase": "hunt",
+        "difficulty": "beginner",
+        "tags": [
+            "ATS",
+            "Branding",
+            "Resume"
+        ],
+        "gates": {
+            "stageMax": 2
+        },
+        "title": "ATS Battle",
+        "text": "Your resume isn't getting past the automated filters. How do you re-architect your application strategy?",
+        "avatar": "mentor",
+        "choices": [
+            {
+                "text": "Plain Text Simplicity",
+                "description": "Strip all formatting for maximum readability by robots.",
+                "energyCost": 2,
+                "fx": {
+                    "confidence": 5,
+                    "reputation": 5
+                },
+                "time": 0.1,
+                "huntProgress": 10
+            },
+            {
+                "text": "Keyword Optimization",
+                "description": "Aggressively match specific job description keywords.",
+                "energyCost": 5,
+                "fx": {
+                    "confidence": 10,
+                    "aggression": 10
+                },
+                "time": 0.1,
+                "huntProgress": 15
+            },
+            {
+                "text": "Direct Referral Hunt",
+                "description": "Skip the ATS entirely and find a human gatekeeper.",
+                "energyCost": 9,
+                "fx": {
+                    "network": 15,
+                    "confidence": 10,
+                    "grit": 5
+                },
+                "time": 0.4,
+                "huntProgress": 25
+            }
+        ]
+    },
+    {
+        "id": "jh_analyst_sql",
+        "phase": "hunt",
+        "difficulty": "intermediate",
+        "roleLock": [
+            "analyst"
+        ],
+        "tags": [
+            "Technical",
+            "SQL",
+            "Interview"
+        ],
+        "gates": {
+            "stageMin": 3
+        },
+        "title": "The SQL Gauntlet",
+        "text": "The lead analyst hands you a messy database. 'Find the churn rate for users who signed up via organic search but haven't logged in for 30 days.'",
+        "avatar": "recruiter",
+        "choices": [
+            {
+                "text": "CTE Structure",
+                "description": "Clean, readable code with multiple Common Table Expressions.",
+                "energyCost": 6,
+                "fx": {
+                    "sql": 15,
+                    "interviewPerformance": 10,
+                    "reputation": 5
+                },
+                "time": 0.2,
+                "huntProgress": 15
+            },
+            {
+                "text": "Optimized JOINs",
+                "description": "Focus purely on execution speed and indexing.",
+                "energyCost": 8,
+                "fx": {
+                    "sql": 20,
+                    "interviewPerformance": 15,
+                    "confidence": 5
+                },
+                "time": 0.2,
+                "huntProgress": 18
+            },
+            {
+                "text": "Self-Service Proposal",
+                "description": "Build a PowerBI template so they never have to ask this again.",
+                "energyCost": 9,
+                "fx": {
+                    "powerbi": 20,
+                    "reputation": 20,
+                    "leadership": 10
+                },
+                "time": 0.4,
+                "huntProgress": 25
+            }
+        ]
+    },
+    {
+        "id": "jh_engineer_pipeline",
+        "phase": "hunt",
+        "difficulty": "intermediate",
+        "roleLock": [
+            "engineer"
+        ],
+        "tags": [
+            "Technical",
+            "Infra",
+            "Interview"
+        ],
+        "gates": {
+            "stageMin": 3
+        },
+        "title": "Pipeline Collapse",
+        "text": "During a live architectural round, the interviewer asks: 'Our 1TB Daily ETL failed last night. The logs are empty. Walk me through your triage.'",
+        "avatar": "recruiter",
+        "choices": [
+            {
+                "text": "Checkpoint Strategy",
+                "description": "Verify intermediate S3 buckets and task heartbeat signals.",
+                "energyCost": 7,
+                "fx": {
+                    "cloud": 15,
+                    "problem_solving": 10,
+                    "interviewPerformance": 15
+                },
+                "time": 0.3,
+                "huntProgress": 20
+            },
+            {
+                "text": "Compute Scaling",
+                "description": "Investigate OOM (Out of Memory) errors and scale the cluster.",
+                "energyCost": 8,
+                "fx": {
+                    "python": 15,
+                    "cloud": 20,
+                    "confidence": 10
+                },
+                "time": 0.3,
+                "huntProgress": 22
+            },
+            {
+                "text": "Automated Backfill",
+                "description": "Write a script to safely idempotent-ly rerun the failed chunks.",
+                "energyCost": 9,
+                "fx": {
+                    "python": 25,
+                    "problem_solving": 20,
+                    "reputation": 10
+                },
+                "time": 0.5,
+                "huntProgress": 30
+            }
+        ]
+    },
+    {
+        "id": "jh_ai_scaling",
+        "phase": "hunt",
+        "difficulty": "intermediate",
+        "roleLock": [
+            "ai_engineer"
+        ],
+        "tags": [
+            "Technical",
+            "MLOps",
+            "Interview"
+        ],
+        "gates": {
+            "stageMin": 3
+        },
+        "title": "The GPU Shortage",
+        "text": "A startup CTO asks: 'We need to deploy this LLM to 100k users with minimal latency but our compute budget is tight. What's the plan?'",
+        "avatar": "recruiter",
+        "choices": [
+            {
+                "text": "Quantization Route",
+                "description": "Compress the model to 4-bit to run on cheaper instances.",
+                "energyCost": 6,
+                "fx": {
+                    "ml": 20,
+                    "learningSpeed": 10,
+                    "interviewPerformance": 15
+                },
+                "time": 0.3,
+                "huntProgress": 20
+            },
+            {
+                "text": "Batch Inference",
+                "description": "Trade real-time response for efficient batch processing.",
+                "energyCost": 4,
+                "fx": {
+                    "ml": 15,
+                    "stability": 10,
+                    "problem_solving": 5
+                },
+                "time": 0.2,
+                "huntProgress": 15
+            },
+            {
+                "text": "Cloud-Native CDN",
+                "description": "Deploy at the edge using serverless functions.",
+                "energyCost": 9,
+                "fx": {
+                    "cloud": 25,
+                    "ml": 15,
+                    "confidence": 10
+                },
+                "time": 0.4,
+                "huntProgress": 28
+            }
+        ]
+    },
+    {
+        "id": "jh_senior_architecture",
+        "phase": "hunt",
+        "difficulty": "advanced",
+        "tags": [
+            "Strategy",
+            "SystemDesign"
+        ],
+        "gates": {
+            "stageMin": 3
+        },
+        "title": "The Million Dollar Choice",
+        "text": "The CTO asks for a multi-year data strategy. Do we build the Lakehouse on Databricks or stick with BigQuery?",
+        "avatar": "founder",
+        "choices": [
+            {
+                "text": "Databricks: Flexibility",
+                "description": "Focus on ML and open-source data formats (Delta Lake).",
+                "energyCost": 9,
+                "fx": {
+                    "leadership": 20,
+                    "reputation": 20,
+                    "cloud": 15
+                },
+                "time": 0.5,
+                "huntProgress": 30
+            },
+            {
+                "text": "BigQuery: Simplicity",
+                "description": "Focus on speed to market and SQL-first analytics.",
+                "energyCost": 8,
+                "fx": {
+                    "stakeholder_mgmt": 20,
+                    "stability": 15,
+                    "sql": 10
+                },
+                "time": 0.3,
+                "huntProgress": 25
+            },
+            {
+                "text": "Hybrid Governance",
+                "description": "Propose a unified catalog with stricter data quality checks.",
+                "energyCost": 9,
+                "fx": {
+                    "leadership": 25,
+                    "problem_solving": 20,
+                    "grit": 15
+                },
+                "time": 0.6,
+                "huntProgress": 40
+            }
+        ]
+    },
+    {
+        "id": "jh_negotiation_senior",
+        "phase": "hunt",
+        "difficulty": "advanced",
+        "tags": [
+            "Negotiation",
+            "Closing"
+        ],
+        "gates": {
+            "stageMin": 5
+        },
+        "title": "The Counter-Offer",
+        "text": "A Tier-1 company offers you a good role, but your 'dream' startup wants you to justify a higher title. How do you play it?",
+        "avatar": "recruiter",
+        "choices": [
+            {
+                "text": "Data-Backed Pitch",
+                "description": "Show exactly how much revenue your previous projects saved.",
+                "energyCost": 4,
+                "fx": {
+                    "confidence": 20,
+                    "reputation": 15,
+                    "savings": 5000
+                },
+                "time": 0.1,
+                "huntProgress": 100,
+                "flag": "job_offered_senior"
+            },
+            {
+                "text": "The Scarcity Move",
+                "description": "Mention the other offer to trigger their FOMO.",
+                "energyCost": 6,
+                "fx": {
+                    "aggression": 30,
+                    "confidence": 10,
+                    "savings": 8000
+                },
+                "time": 0,
+                "huntProgress": 100,
+                "flag": "job_offered_senior"
+            }
+        ]
+    }
+]

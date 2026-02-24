@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useGameStore } from '@/store/gameStore';
 import { pickNextHuntScenario, checkStageAdvance } from '@/engine/JobHuntResolver';
+import { applyChoice } from '@/engine/reducer';
 import dynamic from 'next/dynamic';
 const NoiseSlasher = dynamic(() => import('@/components/NoiseSlasher'), { ssr: false });
 
@@ -17,7 +18,10 @@ export default function JobHuntChapter() {
         huntStage,
         huntProgress,
         history,
-        flags
+        flags,
+        role, // Extract role from root state
+        momentumCounter,
+        momentumActive
     } = useGameStore();
 
     const [scenarios, setScenarios] = useState([]);
@@ -35,8 +39,15 @@ export default function JobHuntChapter() {
                 const scenariosArray = Array.isArray(localData) ? localData : (localData.default || localData);
                 if (Array.isArray(scenariosArray)) {
                     setScenarios(scenariosArray);
-                    const first = pickNextHuntScenario(scenariosArray, { history, huntStage, months, stats: globalStats, flags }, globalStats.role);
+                    // Use 'role' from state, NOT 'globalStats.role'
+                    const { scenario: first, updates } = pickNextHuntScenario(scenariosArray, {
+                        ...useGameStore.getState(), // Use current state to get fresh cooldowns/history
+                        stats: globalStats,
+                        flags
+                    }, role);
+
                     setCurrentScenario(first);
+                    if (updates) useGameStore.setState(updates);
                 }
             } catch (err) {
                 console.error("Failed to load scenarios:", err);
@@ -44,12 +55,13 @@ export default function JobHuntChapter() {
             }
         };
         loadContent();
-    }, []);
+    }, []); // Note: We might want to add 'role' to dependency array if it changes, but usually it's set once.
 
     const handleChoice = (choice) => {
         if (isTransitioning || flags.has_job) return;
 
-        const energyCost = (choice.energyCost || 10) / 100;
+        // Check energy requirement
+        const energyCost = (choice.energyCost || 0) / 100;
         if (globalStats.energy < energyCost) {
             setToast("⚠️ INSUFFICIENT ENERGY - RECOVER TO PROCEED");
             return;
@@ -57,48 +69,55 @@ export default function JobHuntChapter() {
 
         setIsTransitioning(true);
 
-        // 1. Prepare Updates
-        const updates = { ...globalStats };
-        if (choice.fx) {
-            Object.entries(choice.fx).forEach(([key, value]) => {
-                const k = key;
-                if (k === 'energy') return;
-                if (k === 'stress') {
-                    updates.stress = Math.min(1.0, (updates.stress || 0) + (value / 100));
-                } else {
-                    updates[k] = (updates[k] || 0) + value;
-                }
+        // Use reducer for all logic (includes momentum, stats, progression)
+        const currentState = useGameStore.getState();
+        const result = applyChoice(currentState, choice);
+
+        // Apply all state updates from reducer
+        useGameStore.setState(result.newState);
+
+        // Show notifications
+        if (result.notifications.length > 0) {
+            result.notifications.forEach((notif, idx) => {
+                setTimeout(() => {
+                    setToast(notif);
+                    setTimeout(() => setToast(null), 3000);
+                }, idx * 500);
             });
         }
 
-        updates.energy = Math.max(0, globalStats.energy - energyCost);
-        const timeDelta = choice.time || 0.1;
-        const newMonths = months + timeDelta;
-
-        const nextStatePatch = {
-            stats: updates,
-            months: newMonths,
-            history: [...history, currentScenario.id],
-            huntProgress: Math.min(100, (huntProgress || 0) + (choice.huntProgress || 5))
-        };
-
-        // 2. Check for stage advance
-        const stageUpdate = checkStageAdvance({ ...useGameStore.getState(), ...nextStatePatch });
-        if (stageUpdate) Object.assign(nextStatePatch, stageUpdate);
-
-        // Commit and Transition
-        useGameStore.setState(nextStatePatch);
-
-        setTimeout(() => {
-            if (choice.flag === "job" || flags.has_job) {
-                setUiPhase('end');
-            } else {
-                const next = pickNextHuntScenario(scenarios, { ...useGameStore.getState() }, globalStats.role);
-                setCurrentScenario(next);
-                setIsTransitioning(false);
-                setToast(null);
+        // Check for stage advancement
+        const stageUpdate = checkStageAdvance(result.newState);
+        if (stageUpdate) {
+            useGameStore.setState(stageUpdate);
+            if (stageUpdate.notifications && stageUpdate.notifications.length > 0) {
+                setTimeout(() => {
+                    setToast(stageUpdate.notifications[0]);
+                    setTimeout(() => setToast(null), 3000);
+                }, 1000);
             }
-        }, 800);
+        }
+
+        // Transition will be handled by animation callback (no artificial delay!)
+        // 800ms setTimeout removed for 500ms performance gain
+    };
+
+    // Load next scenario (called by animation onAnimationComplete)
+    const loadNextScenario = () => {
+        const result = useGameStore.getState();
+        if (result.flags.has_job || result.flags.has_job_startup) {
+            setUiPhase('end');
+        } else {
+            const freshState = useGameStore.getState();
+            const { scenario: next, updates } = pickNextHuntScenario(
+                scenarios,
+                freshState,
+                freshState.role
+            );
+            setCurrentScenario(next);
+            if (updates) useGameStore.setState(updates);
+            setIsTransitioning(false);
+        }
     };
 
     if (loadingError) return <div className="h-full flex items-center justify-center text-rose-500 font-bold">{loadingError}</div>;
@@ -139,9 +158,18 @@ export default function JobHuntChapter() {
                 <div className="bg-surface/40 backdrop-blur-md border border-white/5 rounded-[2rem] p-6">
                     <div className="flex items-center justify-between mb-6">
                         <h3 className="text-[10px] font-black text-primary/60 uppercase tracking-[0.4em] font-display">Market Access Pipeline</h3>
-                        <div className="flex items-center gap-2">
-                            <span className="text-[10px] font-mono text-foreground-muted italic">INTEGRITY:</span>
-                            <span className="text-xs font-black text-white italic">{Math.round(huntProgress)}%</span>
+                        <div className="flex items-center gap-3">
+                            {momentumActive && (
+                                <div className="flex items-center gap-2 px-3 py-1 bg-gradient-to-r from-orange-500/20 to-red-500/20 border border-orange-500/40 rounded-full animate-pulse">
+                                    <span className="text-[10px] font-black text-orange-400 uppercase tracking-widest">
+                                        🔥 MOMENTUM ACTIVE: +25% PROGRESS BOOST
+                                    </span>
+                                </div>
+                            )}
+                            <div className="flex items-center gap-2">
+                                <span className="text-[10px] font-mono text-foreground-muted italic">INTEGRITY:</span>
+                                <span className="text-xs font-black text-white italic">{Math.round(huntProgress)}%</span>
+                            </div>
                         </div>
                     </div>
 
@@ -208,6 +236,8 @@ export default function JobHuntChapter() {
                             <motion.div
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
+                                transition={{ duration: 0.3 }}
+                                onAnimationComplete={loadNextScenario}
                                 className="absolute inset-0 flex flex-col items-center justify-center bg-background/50 backdrop-blur-sm rounded-[2.5rem]"
                             >
                                 <div className="w-12 h-12 border-2 border-primary/30 border-t-primary rounded-full animate-spin mb-4" />
@@ -221,7 +251,7 @@ export default function JobHuntChapter() {
             {/* BOTTOM: TACTIC DECK */}
             <div className="mt-6 z-10 w-full max-w-5xl self-center">
                 <p className="text-[10px] font-black text-foreground-muted uppercase tracking-[0.4em] mb-4 ml-4 font-display">Available Tactics / Deploy Center</p>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 w-full">
                     {currentScenario.choices.map((choice, i) => {
                         const isDisabled = isTransitioning || globalStats.energy < (choice.energyCost || 0) / 100;
                         return (
@@ -232,7 +262,7 @@ export default function JobHuntChapter() {
                                 onClick={() => handleChoice(choice)}
                                 disabled={isDisabled}
                                 className={`
-                                    group relative text-left outline-none transition-all duration-300
+                                    group relative text-left outline-none transition-all duration-300 min-w-[200px] w-full
                                     ${isDisabled ? 'opacity-40 cursor-not-allowed grayscale' : 'cursor-pointer'}
                                 `}
                             >

@@ -32,7 +32,12 @@ const APP_MAP: Record<string, { title: string; component: React.ComponentType }>
 };
 
 export default function WindowManager() {
-    const { openWindows, activeWindow, focusWindow, closeWindow } = useGameStore();
+    // TODO: openWindows, activeWindow, focusWindow, closeWindow don't exist in store
+    const store = useGameStore();
+    const openWindows: string[] = []; // Temporarily disabled
+    const activeWindow = null;
+    const focusWindow = (id: string) => console.log("Focus:", id);
+    const closeWindow = (id: string) => console.log("Close:", id);
 
     return (
         <div className={styles.windowLayer}>

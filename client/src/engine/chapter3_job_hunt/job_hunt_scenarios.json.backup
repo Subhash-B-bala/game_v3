@@ -1,0 +1,1330 @@
+[
+    {
+        "id": "intro_linkedin_profile",
+        "text": "Your career manager pings: 'Your LinkedIn is tragic. No photos, no keywords. Fix it or remain invisible.'",
+        "title": "Digital Presence Check",
+        "phase": "hunt",
+        "tags": [
+            "ATS",
+            "Networking"
+        ],
+        "cooldown": 5,
+        "gates": {
+            "stageMax": 0
+        },
+        "difficulty": "beginner",
+        "sender": {
+            "name": "Career Coach",
+            "role": "Mentor",
+            "avatar": "mentor"
+        },
+        "choices": [
+            {
+                "id": "optimize_profile",
+                "text": "Optimize with AI & Keywords",
+                "timeCost": 0.2,
+                "energyCost": 20,
+                "fx": {
+                    "reputation": 5,
+                    "stress": 0.05
+                },
+                "huntProgress": 15
+            },
+            {
+                "id": "write_story",
+                "text": "Craft a Personal Brand Story",
+                "timeCost": 0.5,
+                "energyCost": 30,
+                "fx": {
+                    "reputation": 10,
+                    "confidence": 5
+                },
+                "huntProgress": 20
+            },
+            {
+                "id": "ignore_social",
+                "text": "Ignore. GitHub speaks for itself.",
+                "timeCost": 0.1,
+                "energyCost": 5,
+                "fx": {
+                    "reputation": -5,
+                    "grit": 5
+                },
+                "huntProgress": 0
+            }
+        ]
+    },
+    {
+        "id": "resume_ats_battle",
+        "text": "You submit your resume to 50 portals. Automated reply: 'Unable to parse skills.' It's an ATS format issue.",
+        "title": "The ATS Wall",
+        "phase": "hunt",
+        "tags": [
+            "ATS"
+        ],
+        "cooldown": 4,
+        "gates": {
+            "stageMax": 0
+        },
+        "difficulty": "beginner",
+        "sender": {
+            "name": "Effectively Hired",
+            "role": "System",
+            "avatar": "recruiter"
+        },
+        "choices": [
+            {
+                "id": "simplify_resume",
+                "text": "Reformat to Plain Text",
+                "timeCost": 0.4,
+                "energyCost": 15,
+                "fx": {
+                    "stress": 0.1
+                },
+                "huntProgress": 10
+            },
+            {
+                "id": "keyword_stuff",
+                "text": "Aggressively Stuff Keywords",
+                "timeCost": 0.1,
+                "energyCost": 10,
+                "fx": {
+                    "reputation": -2,
+                    "confidence": 2
+                },
+                "huntProgress": 5
+            }
+        ]
+    },
+    {
+        "id": "cold_message_spam",
+        "text": "Should you copy-paste the same 'Hi, surely hiring?' message to 100 CTOs?",
+        "title": "Outreach Strategy",
+        "phase": "hunt",
+        "tags": [
+            "Networking"
+        ],
+        "cooldown": 4,
+        "gates": {
+            "stageMax": 0
+        },
+        "difficulty": "beginner",
+        "sender": {
+            "name": "Inner Monologue",
+            "role": "Self",
+            "avatar": "fresher"
+        },
+        "choices": [
+            {
+                "id": "spam_everyone",
+                "text": "Spam Everyone (Quantity)",
+                "timeCost": 0.2,
+                "energyCost": 30,
+                "fx": {
+                    "network": 2,
+                    "burnoutRisk": 5
+                },
+                "huntProgress": 5
+            },
+            {
+                "id": "target_research",
+                "text": "Research 3 Key Leads",
+                "timeCost": 0.5,
+                "energyCost": 25,
+                "fx": {
+                    "network": 10,
+                    "strategy": 5
+                },
+                "huntProgress": 15
+            }
+        ]
+    },
+    {
+        "id": "freelance_temptation",
+        "text": "A friend offers a quick Upwork gig. $50 for a React fix. It distracts from job hunting.",
+        "title": "Side Hustle Distraction",
+        "phase": "hunt",
+        "tags": [
+            "Finance"
+        ],
+        "cooldown": 6,
+        "gates": {
+            "stageMax": 0
+        },
+        "difficulty": "beginner",
+        "sender": {
+            "name": "Upwork Alert",
+            "role": "Platform",
+            "avatar": "peer"
+        },
+        "choices": [
+            {
+                "id": "take_gig",
+                "text": "Take the Cash ($50)",
+                "timeCost": 0.5,
+                "energyCost": 20,
+                "fx": {
+                    "savings": 50,
+                    "stress": 0.1
+                },
+                "huntProgress": 0
+            },
+            {
+                "id": "focus_hunt",
+                "text": "Reject & Focus on Hunt",
+                "timeCost": 0.1,
+                "energyCost": 5,
+                "fx": {
+                    "grit": 5,
+                    "savings": -10
+                },
+                "huntProgress": 10
+            }
+        ]
+    },
+    {
+        "id": "family_pressure_call",
+        "text": "Mom calls: 'Why aren't you employed yet? My friend's son just joined Google.'",
+        "title": "Domestic Pressure",
+        "phase": "hunt",
+        "tags": [
+            "Mental"
+        ],
+        "cooldown": 8,
+        "gates": {
+            "stageMax": 0
+        },
+        "difficulty": "beginner",
+        "sender": {
+            "name": "Mom",
+            "role": "Family",
+            "avatar": "family"
+        },
+        "choices": [
+            {
+                "id": "explain_market",
+                "text": "Explain Tech Recession",
+                "timeCost": 0.2,
+                "energyCost": 25,
+                "fx": {
+                    "stress": 0.2,
+                    "communication": 2
+                },
+                "huntProgress": 0
+            },
+            {
+                "id": "lie_status",
+                "text": "Lie: 'I have offers'",
+                "timeCost": 0.1,
+                "energyCost": 10,
+                "fx": {
+                    "ethics": -5,
+                    "stress": 0.05
+                },
+                "huntProgress": 0
+            },
+            {
+                "id": "hang_up",
+                "text": "Hang Up & Grind",
+                "timeCost": 0.05,
+                "energyCost": 5,
+                "fx": {
+                    "grit": 10,
+                    "stress": 0.1
+                },
+                "huntProgress": 5
+            }
+        ]
+    },
+    {
+        "id": "scam_job_offer",
+        "text": "Email: 'Urgent Hiring! $200k/yr Data Entry. Click here to attach bank details.'",
+        "title": "Suspicious Email",
+        "phase": "hunt",
+        "tags": [
+            "Scam"
+        ],
+        "cooldown": 10,
+        "gates": {
+            "stageMax": 0
+        },
+        "difficulty": "beginner",
+        "sender": {
+            "name": "TotallyRealRecruiter",
+            "role": "Scammer",
+            "avatar": "scammer"
+        },
+        "choices": [
+            {
+                "id": "click_link",
+                "text": "Click Link (Desperate)",
+                "timeCost": 1,
+                "energyCost": 40,
+                "fx": {
+                    "savings": -500,
+                    "confidence": -10
+                },
+                "huntProgress": 0
+            },
+            {
+                "id": "report_scam",
+                "text": "Report & Block",
+                "timeCost": 0.5,
+                "energyCost": 5,
+                "fx": {
+                    "intelligence": 5
+                },
+                "huntProgress": 5
+            }
+        ]
+    },
+    {
+        "id": "portfolio_crash",
+        "text": "Your portfolio site is down. AWS bill unpaid or config error.",
+        "title": "404 Portfolio Not Found",
+        "phase": "hunt",
+        "tags": [
+            "Technical"
+        ],
+        "cooldown": 6,
+        "gates": {
+            "stageMax": 0
+        },
+        "difficulty": "beginner",
+        "sender": {
+            "name": "AWS Billing",
+            "role": "System",
+            "avatar": "system"
+        },
+        "choices": [
+            {
+                "id": "fix_deployment",
+                "text": "Debug Deployment",
+                "timeCost": 0.8,
+                "energyCost": 40,
+                "fx": {
+                    "cloud": 5,
+                    "stress": 0.1
+                },
+                "huntProgress": 10
+            },
+            {
+                "id": "move_github",
+                "text": "Move to GitHub Pages (Free)",
+                "timeCost": 0.5,
+                "energyCost": 20,
+                "fx": {
+                    "savings": 10,
+                    "reputation": -2
+                },
+                "huntProgress": 5
+            }
+        ]
+    },
+    {
+        "id": "first_screening_call",
+        "text": "A junior recruiter calls. 'Tell me about yourself.' You haven't practiced this.",
+        "title": "Surprise Screening",
+        "phase": "hunt",
+        "tags": [
+            "Interview"
+        ],
+        "cooldown": 1,
+        "gates": {
+            "stageMax": 0
+        },
+        "difficulty": "beginner",
+        "sender": {
+            "name": "Sara",
+            "role": "Recruiter",
+            "avatar": "recruiter"
+        },
+        "choices": [
+            {
+                "id": "wing_it",
+                "text": "Waffle & Wing It",
+                "timeCost": 0.1,
+                "energyCost": 30,
+                "fx": {
+                    "confidence": -5,
+                    "communication": 1
+                },
+                "huntProgress": 5
+            },
+            {
+                "id": "reschedule",
+                "text": "Ask to Reschedule",
+                "timeCost": 0.05,
+                "energyCost": 10,
+                "fx": {
+                    "reputation": -5,
+                    "stress": -0.05
+                },
+                "huntProgress": 0
+            }
+        ]
+    },
+    {
+        "id": "technical_screening_analyst",
+        "text": "Live SQL Query Challenge. 'Select top 3 customers by revenue.'",
+        "title": "SQL Screening",
+        "phase": "hunt",
+        "tags": [
+            "Technical"
+        ],
+        "roleLock": [
+            "analyst"
+        ],
+        "cooldown": 3,
+        "gates": {
+            "stageMin": 1,
+            "stageMax": 1
+        },
+        "difficulty": "intermediate",
+        "sender": {
+            "name": "Tech Lead",
+            "role": "Interviewer",
+            "avatar": "analyst"
+        },
+        "choices": [
+            {
+                "id": "efficient_query",
+                "text": "Write Optimal Query",
+                "timeCost": 0.3,
+                "energyCost": 30,
+                "fx": {
+                    "sql": 10,
+                    "confidence": 5
+                },
+                "huntProgress": 25
+            },
+            {
+                "id": "basic_query",
+                "text": "Write Basic Query",
+                "timeCost": 0.15,
+                "energyCost": 15,
+                "fx": {
+                    "sql": 2
+                },
+                "huntProgress": 15
+            }
+        ]
+    },
+    {
+        "id": "technical_screening_engineer",
+        "text": "Python Algorithmic Task. 'Invert a Binary Tree.' Classic.",
+        "title": "Algo Screening",
+        "phase": "hunt",
+        "tags": [
+            "Technical"
+        ],
+        "roleLock": [
+            "engineer",
+            "fullstack"
+        ],
+        "cooldown": 3,
+        "gates": {
+            "stageMin": 1,
+            "stageMax": 1
+        },
+        "difficulty": "intermediate",
+        "sender": {
+            "name": "Senior Dev",
+            "role": "Interviewer",
+            "avatar": "engineer"
+        },
+        "choices": [
+            {
+                "id": "recursive_sol",
+                "text": "Recursive Solution",
+                "timeCost": 0.3,
+                "energyCost": 30,
+                "fx": {
+                    "python": 10,
+                    "confidence": 5
+                },
+                "huntProgress": 25
+            },
+            {
+                "id": "brute_force",
+                "text": "Brute Force Iterative",
+                "timeCost": 0.2,
+                "energyCost": 20,
+                "fx": {
+                    "python": 2
+                },
+                "huntProgress": 15
+            }
+        ]
+    },
+    {
+        "id": "technical_screening_ai",
+        "text": "Explain the difference between L1 and L2 regularization.",
+        "title": "ML Concept Check",
+        "phase": "hunt",
+        "tags": [
+            "Technical"
+        ],
+        "roleLock": [
+            "ai_engineer"
+        ],
+        "cooldown": 3,
+        "gates": {
+            "stageMin": 1,
+            "stageMax": 1
+        },
+        "difficulty": "intermediate",
+        "sender": {
+            "name": "Lead Data Scientist",
+            "role": "Interviewer",
+            "avatar": "manager"
+        },
+        "choices": [
+            {
+                "id": "detailed_math",
+                "text": "Explain Mathematical Derivation",
+                "timeCost": 0.3,
+                "energyCost": 35,
+                "fx": {
+                    "ml": 10,
+                    "communication": 5
+                },
+                "huntProgress": 25
+            },
+            {
+                "id": "intuition_only",
+                "text": "Give High-Level Intuition",
+                "timeCost": 0.15,
+                "energyCost": 15,
+                "fx": {
+                    "communication": 2
+                },
+                "huntProgress": 15
+            }
+        ]
+    },
+    {
+        "id": "ghosted_after_screening",
+        "text": "You felt good about the screening, but it's been 2 weeks. Silence.",
+        "title": "The Ghost",
+        "phase": "hunt",
+        "tags": [
+            "Mental"
+        ],
+        "cooldown": 5,
+        "gates": {
+            "stageMin": 1,
+            "stageMax": 1
+        },
+        "difficulty": "intermediate",
+        "sender": {
+            "name": "Inbox",
+            "role": "System",
+            "avatar": "system"
+        },
+        "choices": [
+            {
+                "id": "follow_up_polite",
+                "text": "Send Polite Follow-up",
+                "timeCost": 0.1,
+                "energyCost": 10,
+                "fx": {
+                    "reputation": 2,
+                    "stress": 0.05
+                },
+                "huntProgress": 5
+            },
+            {
+                "id": "move_on_angry",
+                "text": "Rage Apply Elsewhere",
+                "timeCost": 0.5,
+                "energyCost": 40,
+                "fx": {
+                    "stress": 0.2,
+                    "aggression": 5
+                },
+                "huntProgress": 15
+            }
+        ]
+    },
+    {
+        "id": "take_home_assignment",
+        "text": "Company X sends a 'Take Home Test'. Build a full React App in 48 hours for free.",
+        "title": "Unpaid Labor?",
+        "phase": "hunt",
+        "tags": [
+            "Technical",
+            "Ethics"
+        ],
+        "cooldown": 7,
+        "gates": {
+            "stageMin": 1,
+            "stageMax": 1
+        },
+        "difficulty": "intermediate",
+        "sender": {
+            "name": "Hiring Manager",
+            "role": "Interviewer",
+            "avatar": "manager"
+        },
+        "choices": [
+            {
+                "id": "do_it_perfect",
+                "text": "Grind Weekend (Do it)",
+                "timeCost": 0.5,
+                "energyCost": 80,
+                "fx": {
+                    "burnoutRisk": 20,
+                    "grit": 10
+                },
+                "huntProgress": 40
+            },
+            {
+                "id": "refuse_assignment",
+                "text": "Refuse politely",
+                "timeCost": 0.05,
+                "energyCost": 5,
+                "fx": {
+                    "confidence": 5,
+                    "reputation": 5
+                },
+                "huntProgress": 0
+            }
+        ]
+    },
+    {
+        "id": "referral_request",
+        "text": "A former colleague works at a target company. Ask for a referral?",
+        "title": "Network Tap",
+        "phase": "hunt",
+        "tags": [
+            "Networking"
+        ],
+        "cooldown": 6,
+        "gates": {
+            "stageMin": 1,
+            "stageMax": 1
+        },
+        "difficulty": "intermediate",
+        "sender": {
+            "name": "LinkedIn",
+            "role": "Platform",
+            "avatar": "peer"
+        },
+        "choices": [
+            {
+                "id": "ask_referral",
+                "text": "Ask for Coffee Chat",
+                "timeCost": 0.2,
+                "energyCost": 20,
+                "fx": {
+                    "network": 10,
+                    "savings": -10
+                },
+                "huntProgress": 20
+            },
+            {
+                "id": "cold_apply",
+                "text": "Don't bother them, Cold Apply",
+                "timeCost": 0.1,
+                "energyCost": 10,
+                "fx": {
+                    "stress": 0.05
+                },
+                "huntProgress": 5
+            }
+        ]
+    },
+    {
+        "id": "lowball_offer_check",
+        "text": "Recruiter asks: 'What is your current salary?' Trap question.",
+        "title": "Salary Check",
+        "phase": "hunt",
+        "tags": [
+            "Negotiation"
+        ],
+        "cooldown": 5,
+        "gates": {
+            "stageMin": 1,
+            "stageMax": 1
+        },
+        "difficulty": "intermediate",
+        "sender": {
+            "name": "Recruiter",
+            "role": "HR",
+            "avatar": "recruiter"
+        },
+        "choices": [
+            {
+                "id": "reveal_low",
+                "text": "Tell Truth (Low)",
+                "timeCost": 0.5,
+                "energyCost": 5,
+                "fx": {
+                    "confidence": -5
+                },
+                "huntProgress": 10
+            },
+            {
+                "id": "deflect",
+                "text": "Deflect: 'Market Rate'",
+                "timeCost": 0.5,
+                "energyCost": 15,
+                "fx": {
+                    "negotiation": 5,
+                    "confidence": 5
+                },
+                "huntProgress": 15
+            }
+        ]
+    },
+    {
+        "id": "visa_question",
+        "text": "Application form asks: 'Do you requires sponsorship now or in the future?'",
+        "title": "The Visa Box",
+        "phase": "hunt",
+        "tags": [
+            "ATS"
+        ],
+        "cooldown": 4,
+        "gates": {
+            "stageMin": 1,
+            "stageMax": 1
+        },
+        "difficulty": "intermediate",
+        "sender": {
+            "name": "System",
+            "role": "ATS",
+            "avatar": "system"
+        },
+        "choices": [
+            {
+                "id": "check_no",
+                "text": "Check No (Lie/Risk)",
+                "timeCost": 0.5,
+                "energyCost": 10,
+                "fx": {
+                    "ethics": -10,
+                    "stress": 0.3
+                },
+                "huntProgress": 20
+            },
+            {
+                "id": "check_yes",
+                "text": "Check Yes (Honest)",
+                "timeCost": 0.5,
+                "energyCost": 5,
+                "fx": {
+                    "ethics": 5
+                },
+                "huntProgress": 5
+            }
+        ]
+    },
+    {
+        "id": "system_design_round_1",
+        "text": "Onsite Round 1: 'Design Twitter.' Whiteboard session.",
+        "title": "System Design",
+        "phase": "hunt",
+        "tags": [
+            "Technical",
+            "Interview"
+        ],
+        "gates": {
+            "stageMin": 2,
+            "stageMax": 2
+        },
+        "difficulty": "advanced",
+        "roleLock": [
+            "engineer",
+            "fullstack",
+            "backend"
+        ],
+        "sender": {
+            "name": "Architect",
+            "role": "Interviewer",
+            "avatar": "manager"
+        },
+        "choices": [
+            {
+                "id": "focus_database",
+                "text": "Focus on DB Sharding",
+                "timeCost": 0.3,
+                "energyCost": 40,
+                "fx": {
+                    "sql": 5,
+                    "cloud": 5
+                },
+                "huntProgress": 30
+            },
+            {
+                "id": "focus_api",
+                "text": "Focus on API & Caching",
+                "timeCost": 0.3,
+                "energyCost": 40,
+                "fx": {
+                    "python": 5,
+                    "cloud": 5
+                },
+                "huntProgress": 30
+            }
+        ]
+    },
+    {
+        "id": "case_study_analyst",
+        "text": "Onsite Round 1: 'Revenue dropped 20%. Diagnose why.'",
+        "title": "Business Case",
+        "phase": "hunt",
+        "tags": [
+            "Technical",
+            "Interview"
+        ],
+        "gates": {
+            "stageMin": 2,
+            "stageMax": 2
+        },
+        "difficulty": "advanced",
+        "roleLock": [
+            "analyst"
+        ],
+        "sender": {
+            "name": "Product Owner",
+            "role": "Interviewer",
+            "avatar": "manager"
+        },
+        "choices": [
+            {
+                "id": "framework_approach",
+                "text": "Use MECE Framework",
+                "timeCost": 0.3,
+                "energyCost": 35,
+                "fx": {
+                    "problem_solving": 10,
+                    "communication": 5
+                },
+                "huntProgress": 30
+            },
+            {
+                "id": "dive_data",
+                "text": "Jump into Spreadsheets",
+                "timeCost": 0.3,
+                "energyCost": 30,
+                "fx": {
+                    "excel": 10
+                },
+                "huntProgress": 20
+            }
+        ]
+    },
+    {
+        "id": "behavioral_failure",
+        "text": "Interview Question: 'Tell me about a time you failed.'",
+        "title": "Behavioral Check",
+        "phase": "hunt",
+        "tags": [
+            "Interview"
+        ],
+        "gates": {
+            "stageMin": 2,
+            "stageMax": 2
+        },
+        "difficulty": "intermediate",
+        "sender": {
+            "name": "HR Director",
+            "role": "Interviewer",
+            "avatar": "recruiter"
+        },
+        "choices": [
+            {
+                "id": "fake_failure",
+                "text": "Share a 'fake' failure (Perfectionism)",
+                "timeCost": 0.1,
+                "energyCost": 10,
+                "fx": {
+                    "reputation": -5
+                },
+                "huntProgress": 10
+            },
+            {
+                "id": "real_failure",
+                "text": "Share real failure & learning",
+                "timeCost": 0.1,
+                "energyCost": 20,
+                "fx": {
+                    "reputation": 5,
+                    "leadership": 5
+                },
+                "huntProgress": 25
+            }
+        ]
+    },
+    {
+        "id": "live_pair_programming",
+        "text": "Interviewer opens IDE. 'Let's code this together.' He watches every keystroke.",
+        "title": "Pair Programming",
+        "phase": "hunt",
+        "tags": [
+            "Technical"
+        ],
+        "gates": {
+            "stageMin": 2,
+            "stageMax": 2
+        },
+        "difficulty": "advanced",
+        "sender": {
+            "name": "Team Lead",
+            "role": "Interviewer",
+            "avatar": "engineer"
+        },
+        "choices": [
+            {
+                "id": "communicate_loud",
+                "text": "Communicate while typing",
+                "timeCost": 0.3,
+                "energyCost": 50,
+                "fx": {
+                    "communication": 10,
+                    "stress": 0.1
+                },
+                "huntProgress": 35
+            },
+            {
+                "id": "silent_focus",
+                "text": "Code silently to focus",
+                "timeCost": 0.3,
+                "energyCost": 40,
+                "fx": {
+                    "python": 5,
+                    "communication": -5
+                },
+                "huntProgress": 15
+            }
+        ]
+    },
+    {
+        "id": "stress_test_interview",
+        "text": "Interviewer acts rude and dismissive. 'Is that really your answer?'",
+        "title": "Stress Test",
+        "phase": "hunt",
+        "tags": [
+            "Mental",
+            "Interview"
+        ],
+        "gates": {
+            "stageMin": 2,
+            "stageMax": 2
+        },
+        "difficulty": "advanced",
+        "sender": {
+            "name": "Grumpy VP",
+            "role": "Interviewer",
+            "avatar": "founder"
+        },
+        "choices": [
+            {
+                "id": "get_defensive",
+                "text": "Argue back",
+                "timeCost": 0.1,
+                "energyCost": 30,
+                "fx": {
+                    "aggression": 10,
+                    "stress": 0.2
+                },
+                "huntProgress": -10
+            },
+            {
+                "id": "keep_calm",
+                "text": "Stay Calm & Clarify",
+                "timeCost": 0.1,
+                "energyCost": 40,
+                "fx": {
+                    "stability": 10,
+                    "reputation": 5
+                },
+                "huntProgress": 25
+            }
+        ]
+    },
+    {
+        "id": "bar_raiser",
+        "text": "Final Check: The 'Bar Raiser' from another team joins to check culture fit.",
+        "title": "The Bar Raiser",
+        "phase": "hunt",
+        "tags": [
+            "Interview"
+        ],
+        "gates": {
+            "stageMin": 2,
+            "stageMax": 2
+        },
+        "difficulty": "advanced",
+        "sender": {
+            "name": "Stranger",
+            "role": "Interviewer",
+            "avatar": "manager"
+        },
+        "choices": [
+            {
+                "id": "show_principles",
+                "text": "Align with Leadership Principles",
+                "timeCost": 0.3,
+                "energyCost": 25,
+                "fx": {
+                    "leadership": 10
+                },
+                "huntProgress": 30
+            },
+            {
+                "id": "just_skills",
+                "text": "Focus on tech skills",
+                "timeCost": 0.3,
+                "energyCost": 20,
+                "fx": {
+                    "python": 5
+                },
+                "huntProgress": 10
+            }
+        ]
+    },
+    {
+        "id": "lunch_interview",
+        "text": "Team invites you to lunch. 'Casual chat.' It is NOT casual.",
+        "title": "The Lunch Test",
+        "phase": "hunt",
+        "tags": [
+            "Networking"
+        ],
+        "gates": {
+            "stageMin": 2,
+            "stageMax": 2
+        },
+        "difficulty": "intermediate",
+        "sender": {
+            "name": "Potential Team",
+            "role": "Team",
+            "avatar": "peer"
+        },
+        "choices": [
+            {
+                "id": "relax_too_much",
+                "text": "Relax & Vent about old job",
+                "timeCost": 0.4,
+                "energyCost": 10,
+                "fx": {
+                    "stress": -0.1,
+                    "reputation": -10
+                },
+                "huntProgress": -20
+            },
+            {
+                "id": "professional_social",
+                "text": "Professional & Friendly",
+                "timeCost": 0.4,
+                "energyCost": 30,
+                "fx": {
+                    "network": 5,
+                    "stakeholder_mgmt": 5
+                },
+                "huntProgress": 20
+            }
+        ]
+    },
+    {
+        "id": "salary_negotiation_start",
+        "text": "Offer received! Base salary is 10% lower than market average.",
+        "title": "Low Offer",
+        "phase": "hunt",
+        "tags": [
+            "Negotiation"
+        ],
+        "gates": {
+            "stageMin": 3,
+            "stageMax": 3
+        },
+        "difficulty": "advanced",
+        "sender": {
+            "name": "HR",
+            "role": "Recruiter",
+            "avatar": "recruiter"
+        },
+        "choices": [
+            {
+                "id": "accept_immediately",
+                "text": "Accept Immediately (Fear)",
+                "timeCost": 0.1,
+                "energyCost": 5,
+                "fx": {
+                    "salary": 60000,
+                    "confidence": -10
+                },
+                "huntProgress": 40
+            },
+            {
+                "id": "negotiate_data",
+                "text": "Counter with Data",
+                "timeCost": 0.3,
+                "energyCost": 30,
+                "fx": {
+                    "salary": 75000,
+                    "negotiation": 10
+                },
+                "huntProgress": 50
+            }
+        ]
+    },
+    {
+        "id": "equity_confusion",
+        "text": "Offer includes '10,000 ISOs'. You have no idea what the strike price is.",
+        "title": "Equity Math",
+        "phase": "hunt",
+        "tags": [
+            "Finance"
+        ],
+        "gates": {
+            "stageMin": 3,
+            "stageMax": 3
+        },
+        "difficulty": "intermediate",
+        "sender": {
+            "name": "CFO",
+            "role": "Exec",
+            "avatar": "cto"
+        },
+        "choices": [
+            {
+                "id": "ask_details",
+                "text": "Ask detailed questions",
+                "timeCost": 0.2,
+                "energyCost": 20,
+                "fx": {
+                    "problem_solving": 5
+                },
+                "huntProgress": 20
+            },
+            {
+                "id": "assume_bonus",
+                "text": "Assume it's bonus money",
+                "timeCost": 0.05,
+                "energyCost": 5,
+                "fx": {
+                    "intelligence": -5
+                },
+                "huntProgress": 10
+            }
+        ]
+    },
+    {
+        "id": "exploding_offer",
+        "text": "'We need an answer in 24 hours.' The Exploding Offer.",
+        "title": "Deadline Pressure",
+        "phase": "hunt",
+        "tags": [
+            "Negotiation",
+            "Mental"
+        ],
+        "gates": {
+            "stageMin": 3,
+            "stageMax": 3
+        },
+        "difficulty": "advanced",
+        "sender": {
+            "name": "HR Manager",
+            "role": "Recruiter",
+            "avatar": "recruiter"
+        },
+        "choices": [
+            {
+                "id": "call_bluff",
+                "text": "Ask for extension",
+                "timeCost": 0.1,
+                "energyCost": 25,
+                "fx": {
+                    "negotiation": 5,
+                    "confidence": 5
+                },
+                "huntProgress": 30
+            },
+            {
+                "id": "panic_sign",
+                "text": "Panic Sign",
+                "timeCost": 0.05,
+                "energyCost": 50,
+                "fx": {
+                    "stress": 0.2,
+                    "confidence": -5
+                },
+                "huntProgress": 25
+            }
+        ]
+    },
+    {
+        "id": "reference_check_scare",
+        "text": "They want to talk to your previous manager. The one you hated.",
+        "title": "Reference Check",
+        "phase": "hunt",
+        "tags": [
+            "Networking"
+        ],
+        "gates": {
+            "stageMin": 3,
+            "stageMax": 3
+        },
+        "difficulty": "intermediate",
+        "sender": {
+            "name": "Background Check",
+            "role": "System",
+            "avatar": "system"
+        },
+        "choices": [
+            {
+                "id": "warn_manager",
+                "text": "Call ex-manager first",
+                "timeCost": 0.3,
+                "energyCost": 40,
+                "fx": {
+                    "stakeholder_mgmt": 10,
+                    "stress": 0.2
+                },
+                "huntProgress": 25
+            },
+            {
+                "id": "provide_peer",
+                "text": "Provide Peer instead",
+                "timeCost": 0.1,
+                "energyCost": 15,
+                "fx": {
+                    "reputation": -2
+                },
+                "huntProgress": 10
+            }
+        ]
+    },
+    {
+        "id": "competing_offer_leverage",
+        "text": "Another company calls with interest just as you're closing.",
+        "title": "Leverage",
+        "phase": "hunt",
+        "tags": [
+            "Negotiation"
+        ],
+        "gates": {
+            "stageMin": 3,
+            "stageMax": 3
+        },
+        "difficulty": "advanced",
+        "sender": {
+            "name": "Company B",
+            "role": "Recruiter",
+            "avatar": "recruiter"
+        },
+        "choices": [
+            {
+                "id": "mention_offer",
+                "text": "Mention Company B to Company A",
+                "timeCost": 0.3,
+                "energyCost": 30,
+                "fx": {
+                    "negotiation": 15,
+                    "salary": 5000
+                },
+                "huntProgress": 40
+            },
+            {
+                "id": "play_safe",
+                "text": "Don't risk it",
+                "timeCost": 0.1,
+                "energyCost": 5,
+                "fx": {
+                    "stability": 5
+                },
+                "huntProgress": 10
+            }
+        ]
+    },
+    {
+        "id": "sign_or_walk",
+        "text": "Final Contract is on the table. It's safe but boring.",
+        "title": "The Decision",
+        "phase": "hunt",
+        "tags": [
+            "Negotiation"
+        ],
+        "gates": {
+            "stageMin": 4,
+            "stageMax": 4
+        },
+        "difficulty": "beginner",
+        "sender": {
+            "name": "Your Future",
+            "role": "Self",
+            "avatar": "success"
+        },
+        "choices": [
+            {
+                "id": "sign_contract",
+                "text": "Sign & Start (Win)",
+                "timeCost": 0.2,
+                "energyCost": 0,
+                "fx": {
+                    "happiness": 10,
+                    "stress": -0.5
+                },
+                "huntProgress": 100,
+                "flag": "has_job"
+            },
+            {
+                "id": "decline_offer",
+                "text": "Decline (Keep Hunting)",
+                "timeCost": 0.1,
+                "energyCost": 20,
+                "fx": {
+                    "grit": 20
+                },
+                "huntProgress": -50
+            }
+        ]
+    },
+    {
+        "id": "startup_gamble",
+        "text": "A stealth startup offers equity only but huge potential.",
+        "title": "High Risk Bet",
+        "phase": "hunt",
+        "tags": [
+            "Finance"
+        ],
+        "gates": {
+            "stageMin": 4,
+            "stageMax": 4
+        },
+        "difficulty": "advanced",
+        "sender": {
+            "name": "Founder",
+            "role": "Visionary",
+            "avatar": "founder"
+        },
+        "choices": [
+            {
+                "id": "join_startup",
+                "text": "Join Revolution (Risk)",
+                "timeCost": 0.3,
+                "energyCost": 50,
+                "fx": {
+                    "startupBias": 20,
+                    "burnoutRisk": 20
+                },
+                "huntProgress": 100,
+                "flag": "has_job_startup"
+            },
+            {
+                "id": "reject_risk",
+                "text": "Too risky",
+                "timeCost": 0.1,
+                "energyCost": 5,
+                "fx": {
+                    "stability": 10
+                },
+                "huntProgress": 0
+            }
+        ]
+    }
+]

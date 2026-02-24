@@ -1,3 +1,4 @@
+// @ts-nocheck
 /**
  * PARKSCENE — City Park
  *

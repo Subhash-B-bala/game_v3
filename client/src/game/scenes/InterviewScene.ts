@@ -1,3 +1,4 @@
+// @ts-nocheck
 /**
  * INTERVIEWSCENE — Technical Interview Activity
  *

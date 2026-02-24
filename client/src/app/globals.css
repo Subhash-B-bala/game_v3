@@ -10,16 +10,16 @@
   --highlight: #d7ef3f;
   /* Lime Yellow */
 
-  /* Neutrals: Deep Space */
-  --background: #181830;
+  /* Neutrals: Light Theme */
+  --background: #ffffff;
   /* Main Bg */
-  --surface: #1B1E28;
+  --surface: #f8f9fa;
   /* Darker Panel */
-  --surface-highlight: #2D323E;
+  --surface-highlight: #e9ecef;
   /* Lighter Panel */
 
-  --foreground: #ffffff;
-  --foreground-muted: #94a3b8;
+  --foreground: #000000;
+  --foreground-muted: #6c757d;
 
   /* Status / Secondary Brand */
   --success: #20c997;
@@ -54,14 +54,14 @@ h6 {
 }
 
 ::-webkit-scrollbar-track {
-  background: #1e293b;
+  background: #f1f3f5;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #475569;
+  background: #adb5bd;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #64748b;
+  background: #868e96;
 }

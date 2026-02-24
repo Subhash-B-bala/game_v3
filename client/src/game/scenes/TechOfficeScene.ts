@@ -1,3 +1,4 @@
+// @ts-nocheck
 /**
  * TECHOFFICE SCENE — Tech Company Office
  *

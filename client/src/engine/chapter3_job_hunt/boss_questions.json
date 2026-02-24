@@ -1,0 +1,82 @@
+{
+  "bosses": [
+    {
+      "district": 0,
+      "name": "The HR Screener",
+      "title": "Priya Mehta — Senior HR",
+      "rounds": 3,
+      "hp": 3,
+      "reward": { "coins": 500, "xp": 250 },
+      "questions": [
+        { "q": "Tell me about yourself.", "choices": ["Ramble about hobbies for 5 minutes", "Give a 2-minute summary: background, skills, and career goals", "Say 'It's all in my resume'", "Start with your birth year and go chronologically"], "correct": 1, "tip": "Keep it concise: Present → Past → Future. Focus on relevance to the role." },
+        { "q": "Why do you want to work here?", "choices": ["Because you're hiring and I need a job", "I researched your company's mission and my skills align with your goals", "My friend works here and said the pay is good", "I applied everywhere, you're the first to respond"], "correct": 1, "tip": "Show genuine interest by mentioning specific company values or projects." },
+        { "q": "What is your expected salary?", "choices": ["Whatever you can offer", "Based on my research, the market range for this role is ₹X-Y LPA", "₹50 LPA minimum, non-negotiable", "I don't care about salary, just give me the job"], "correct": 1, "tip": "Research market rates on Glassdoor/AmbitionBox before any interview." },
+        { "q": "What is your biggest weakness?", "choices": ["I have no weaknesses", "I identified that I tend to over-commit, so I've been using time-blocking to improve", "I'm a perfectionist (wink)", "I'm too honest — sometimes brutally so"], "correct": 1, "tip": "Show self-awareness with a real weakness AND how you're working on it." },
+        { "q": "Where do you see yourself in 5 years?", "choices": ["In your chair, doing your job", "Growing into a senior role where I can mentor others and lead projects", "Rich and retired on a beach", "I don't plan that far ahead"], "correct": 1, "tip": "Show ambition aligned with realistic career progression at the company." }
+      ]
+    },
+    {
+      "district": 1,
+      "name": "The Tech Lead",
+      "title": "Arjun Reddy — Engineering Manager",
+      "rounds": 3,
+      "hp": 4,
+      "reward": { "coins": 800, "xp": 400 },
+      "questions": [
+        { "q": "Explain the difference between SQL JOIN types.", "choices": ["They're all the same thing", "INNER returns matching rows, LEFT returns all from left table + matches, RIGHT is opposite, FULL returns everything", "JOIN means connecting tables, that's all you need to know", "I only use SELECT *"], "correct": 1, "tip": "Know your SQL basics cold — JOINs, GROUP BY, subqueries are interview staples." },
+        { "q": "How would you handle a dataset with 30% missing values?", "choices": ["Delete all rows with missing data", "Analyze the pattern of missing data, then decide: impute (mean/median/mode), use algorithms that handle nulls, or flag them", "Just fill everything with zero", "Missing data doesn't matter for analysis"], "correct": 1, "tip": "Always investigate WHY data is missing before choosing a strategy." },
+        { "q": "What's your approach to debugging a slow SQL query?", "choices": ["Just add more RAM to the server", "Check EXPLAIN plan, add indexes, optimize JOINs, check for N+1 queries, consider query restructuring", "Rewrite the entire application", "That's the DBA's job, not mine"], "correct": 1, "tip": "EXPLAIN is your best friend. Learn to read execution plans." },
+        { "q": "How do you ensure data quality in an ETL pipeline?", "choices": ["Just trust the source data", "Add validation checks at each stage: schema validation, null checks, range checks, reconciliation counts", "Let QA handle it after deployment", "Data quality isn't important for analytics"], "correct": 1, "tip": "Data quality gates at every pipeline stage prevent costly downstream errors." },
+        { "q": "Describe a time you solved a complex technical problem.", "choices": ["I've never faced a complex problem", "I identified the root cause through systematic debugging, researched solutions, implemented a fix, and documented the process for the team", "I just Googled it and copy-pasted the answer", "I escalated it to someone more senior"], "correct": 1, "tip": "Use the STAR method: Situation → Task → Action → Result." },
+        { "q": "What's the difference between a Data Warehouse and a Data Lake?", "choices": ["They're the same thing with different names", "A Data Warehouse stores structured, processed data for analysis; a Data Lake stores raw data in any format for flexible processing", "Data Lakes are always better than Data Warehouses", "Neither is relevant anymore — everything is in the cloud"], "correct": 1, "tip": "Warehouses = structured/curated. Lakes = raw/flexible. Modern stacks use both." }
+      ]
+    },
+    {
+      "district": 2,
+      "name": "The Director",
+      "title": "Sneha Iyer — Director of Analytics",
+      "rounds": 4,
+      "hp": 4,
+      "reward": { "coins": 1200, "xp": 600 },
+      "questions": [
+        { "q": "How would you present a data insight to non-technical stakeholders?", "choices": ["Show them the raw SQL query and explain each line", "Lead with the business impact, use clear visualizations, avoid jargon, and tie findings to their KPIs", "Send a 50-page report and hope they read it", "Just tell them the numbers and let them figure it out"], "correct": 1, "tip": "Always lead with the 'so what' — start with impact, then show evidence." },
+        { "q": "A stakeholder disagrees with your analysis. How do you handle it?", "choices": ["Argue until they agree with you", "Listen to their perspective, validate your methodology, present alternative angles, and find common ground", "Just change your analysis to match what they want", "Ignore them — the data doesn't lie"], "correct": 1, "tip": "Data literacy varies. Be patient and open to legitimate business context you might be missing." },
+        { "q": "How do you prioritize when you have 5 urgent requests?", "choices": ["Work on all 5 simultaneously", "Assess business impact and deadlines, communicate timelines to all requestors, and tackle highest-impact first", "Pick the easiest one first to show quick wins", "Tell everyone you're too busy and they'll have to wait"], "correct": 1, "tip": "Prioritize by impact × urgency. Always communicate realistic timelines." },
+        { "q": "Your model shows a metric that contradicts the CEO's narrative. What do you do?", "choices": ["Change the numbers to match what the CEO wants", "Present the findings objectively, provide context, explain methodology, and let leadership decide how to act", "Keep the finding to yourself — it's not worth the trouble", "Publicly call out the CEO in a meeting"], "correct": 1, "tip": "Integrity in analytics is non-negotiable. Present truth with context and diplomacy." },
+        { "q": "How do you measure the success of a data project?", "choices": ["If it runs without errors, it's successful", "Define success metrics upfront: business KPI impact, adoption rate, accuracy, and time-to-insight improvement", "If the stakeholder says thanks, it's good enough", "Lines of code written"], "correct": 1, "tip": "Always define success criteria BEFORE starting a project." }
+      ]
+    },
+    {
+      "district": 3,
+      "name": "The Scam Buster",
+      "title": "Inspector Vikram — Cyber Crime Unit",
+      "rounds": 4,
+      "hp": 5,
+      "reward": { "coins": 1500, "xp": 750 },
+      "questions": [
+        { "q": "You found a company charging ₹50,000 for 'guaranteed placement.' What should job seekers know?", "choices": ["It might be worth it for the guarantee", "No company can guarantee placement. This is an advance-fee scam targeting desperate freshers", "₹50,000 is reasonable for a good job", "Only pay if they have a nice office"], "correct": 1, "tip": "Guaranteed placement = guaranteed scam. Real jobs come through skills and interviews." },
+        { "q": "An employee reports their company is stealing their PF contributions. What's the first step?", "choices": ["Ignore it — companies can do what they want", "Check PF passbook on EPFO portal, document discrepancies, and file a complaint with the PF Commissioner", "Quit immediately without proof", "Post about it on social media"], "correct": 1, "tip": "Always check your PF passbook regularly on the EPFO member portal." },
+        { "q": "A 'work from home' job requires buying a ₹15,000 'starter kit.' Analysis?", "choices": ["Normal cost of doing business", "Classic advance-fee scam. Legitimate WFH jobs provide equipment or don't require purchases", "Buy it if the reviews are good", "Only scam if it's over ₹50,000"], "correct": 1, "tip": "If a job requires you to spend money upfront, it's not a job — it's a scam." },
+        { "q": "How can freshers verify if a company is legitimate before accepting an offer?", "choices": ["If they have a website, they're legitimate", "Check MCA registry, Glassdoor reviews, LinkedIn employee profiles, physical address verification, and ask for a formal offer letter", "Trust the recruiter's word", "Check if they have a social media presence"], "correct": 1, "tip": "MCA (Ministry of Corporate Affairs) registry is the gold standard for company verification in India." },
+        { "q": "What's the most effective way to report a job scam in India?", "choices": ["Post on Twitter and hope someone sees it", "File a complaint on cybercrime.gov.in, report to local police, and alert the job portal where you found the posting", "Just warn your friends on WhatsApp", "There's no point reporting — nothing happens"], "correct": 1, "tip": "cybercrime.gov.in is the official portal. Always report — it helps build cases against serial scammers." },
+        { "q": "A company's 'HR' asks for your mother's maiden name and first pet's name during 'onboarding.' Why is this dangerous?", "choices": ["Standard security questions for their portal", "These are common security recovery questions for bank accounts — they may be trying to steal your credentials", "It's just for their records", "Only share if it's a big company"], "correct": 1, "tip": "Common security questions should NEVER be shared. They're keys to your bank and email accounts." }
+      ]
+    },
+    {
+      "district": 4,
+      "name": "The CEO",
+      "title": "Rajesh Khanna — CEO, TechVision Inc.",
+      "rounds": 5,
+      "hp": 5,
+      "reward": { "coins": 2500, "xp": 1500 },
+      "questions": [
+        { "q": "Why should we hire you over candidates with more experience?", "choices": ["Because I'm desperate and will work for less", "I bring fresh perspectives, rapid learning ability, and strong foundational skills. I'm invested in growing with this company long-term", "You should hire the experienced person — I don't know why I'm here", "I have a degree, that should be enough"], "correct": 1, "tip": "Freshers sell potential and attitude. Experience can be gained, but drive is innate." },
+        { "q": "This role offers ₹8 LPA. We notice you asked for ₹12 LPA. How do we bridge this gap?", "choices": ["Fine, I'll take ₹8 LPA", "I'd love to discuss the full package — base, bonus, stock options, learning budget, and growth trajectory. The total value matters more than just base salary", "₹12 LPA or I walk", "I'll take anything, just give me the job"], "correct": 1, "tip": "Total compensation = base + bonus + stock + benefits. Negotiate the full package." },
+        { "q": "If you could change one thing about our product, what would it be?", "choices": ["Everything — your product is terrible", "Based on my research, I noticed [specific area] could benefit from [specific improvement], which would improve [metric] by approximately [X%]", "I haven't used your product", "Nothing — it's perfect as is"], "correct": 1, "tip": "This tests preparation. ALWAYS use the product before an interview at a product company." },
+        { "q": "Tell me about a time you failed.", "choices": ["I've never failed at anything", "I once [specific failure], which taught me [specific lesson]. Since then, I've applied this learning to [specific improvement]", "I failed an exam once but it wasn't my fault", "I'd rather not talk about that"], "correct": 1, "tip": "Failure stories show self-awareness and growth mindset. Own it, learn from it, move forward." },
+        { "q": "Where do you see the future of data/tech in the next 5 years?", "choices": ["Everything will be replaced by AI, so why bother?", "I see AI augmenting human decision-making, with growing demand for professionals who can bridge the gap between raw data and business strategy", "I don't think about the future, I focus on today", "Technology doesn't change that much"], "correct": 1, "tip": "Stay current on industry trends. Read blogs, follow thought leaders, attend webinars." },
+        { "q": "Final question: What questions do you have for me?", "choices": ["No questions — when do I start?", "What does success look like in this role at 6 months? What are the biggest challenges the team is facing? How does the company invest in employee growth?", "How many vacation days do I get?", "Can I work from home every day?"], "correct": 1, "tip": "ALWAYS have thoughtful questions. It shows you're evaluating the company, not just begging for a job." }
+      ]
+    }
+  ]
+}

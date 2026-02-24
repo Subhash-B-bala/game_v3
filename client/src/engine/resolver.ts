@@ -9,8 +9,8 @@ export function getNextScenario(
 ): Scenario | null {
     // 1. Filter by Validity
     const candidates = pool.filter(scenario => {
-        // A. Filter by Role (if specified)
-        if (scenario.role && scenario.role !== state.role) {
+        // A. Filter by Role (if roleLock specified)
+        if (scenario.roleLock && state.role && !scenario.roleLock.includes(state.role)) {
             return false;
         }
 

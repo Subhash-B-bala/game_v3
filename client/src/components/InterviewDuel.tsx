@@ -18,13 +18,14 @@ export default function InterviewDuel({ scenarioTitle, actions, onAction, isTran
     const [skepticism, setSkepticism] = useState(60);
 
     // Effect: Tactical proof influence (simplified)
-    useEffect(() => {
-        if (store.resumeAllocation) {
-            const { technical, soft_skills } = store.resumeAllocation;
-            if (technical > 3) setSkepticism(s => Math.max(0, s - 10)); // Head start if technical is high
-            if (soft_skills > 3) setNerve(n => Math.min(100, n + 10)); // More nerve if soft skills are high
-        }
-    }, [store.resumeAllocation]);
+    // TODO: resumeAllocation doesn't exist in store yet - disabled for now
+    // useEffect(() => {
+    //     if (store.resumeAllocation) {
+    //         const { technical, soft_skills } = store.resumeAllocation;
+    //         if (technical > 3) setSkepticism(s => Math.max(0, s - 10)); // Head start if technical is high
+    //         if (soft_skills > 3) setNerve(n => Math.min(100, n + 10)); // More nerve if soft skills are high
+    //     }
+    // }, [store.resumeAllocation]);
 
     return (
         <div className={styles.stage}>

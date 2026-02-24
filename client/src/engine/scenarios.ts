@@ -53,28 +53,28 @@ export const SCENARIO_POOL: Scenario[] = [
                 text: "Comfortable",
                 description: "Large safety net. Focus on quality.",
                 timeCost: 0,
-                fx: { savings: 20000, stress: -0.15, confidence: 5 }
+                fx: { savings: 25000, burnRatePerMonth: 2200, stress: -0.15, confidence: 5 }
             },
             {
                 id: "fin_middle",
                 text: "Middle Class",
                 description: "Standard runway. Balanced risk.",
                 timeCost: 0,
-                fx: { savings: 5000 }
+                fx: { savings: 15000, burnRatePerMonth: 2000 }
             },
             {
                 id: "fin_dependent",
                 text: "Self-Dependent",
                 description: "High stakes. High urgency.",
                 timeCost: 0,
-                fx: { savings: 500, stress: 0.20, grit: 10 }
+                fx: { savings: 10000, burnRatePerMonth: 1800, stress: 0.10, grit: 5 }
             },
             {
                 id: "fin_debt",
                 text: "In Debt",
                 description: "EMI / Loan pressure. Failure is not an option.",
                 timeCost: 0,
-                fx: { savings: -10000, stress: 0.30, grit: 15 } // Grit acts as urgency modifier
+                fx: { savings: -3000, burnRatePerMonth: 1600, stress: 0.30, grit: 15 }
             }
         ]
     },

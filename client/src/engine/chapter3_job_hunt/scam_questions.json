@@ -1,0 +1,392 @@
+[
+  {
+    "id": "scam_01",
+    "question": "A recruiter asks you to pay ₹5,000 for a 'guaranteed placement.' What do you do?",
+    "choices": [
+      "Pay immediately — sounds like a great deal!",
+      "Refuse and report — legitimate companies never ask candidates for money",
+      "Ask for a discount to ₹2,000",
+      "Pay but ask for a receipt"
+    ],
+    "correct": 1,
+    "difficulty": 1,
+    "explanation": "No legitimate company charges candidates for job placement. This is a classic advance-fee scam."
+  },
+  {
+    "id": "scam_02",
+    "question": "You receive an email: 'Congratulations! You're selected for a Data Analyst role at Google. Send your bank details for salary setup.' What's your move?",
+    "choices": [
+      "Send bank details — it's Google!",
+      "Ignore it — Google doesn't hire via random emails",
+      "Reply asking for more information",
+      "Forward it to friends for advice"
+    ],
+    "correct": 1,
+    "difficulty": 1,
+    "explanation": "Big tech companies have formal hiring processes and never ask for bank details via email."
+  },
+  {
+    "id": "scam_03",
+    "question": "A LinkedIn message says: 'We're hiring freshers, ₹12 LPA, no interview needed. Just complete an online training (₹8,000).' Red flag?",
+    "choices": [
+      "No interview + high salary = clear scam",
+      "Seems legit — many companies skip interviews now",
+      "Pay for the training — it's an investment",
+      "Ask if there's an EMI option"
+    ],
+    "correct": 0,
+    "difficulty": 1,
+    "explanation": "No legitimate company offers high salaries without interviews. Training fees are a red flag."
+  },
+  {
+    "id": "scam_04",
+    "question": "A company sends you an 'offer letter' asking you to buy a laptop from their 'authorized vendor' at ₹45,000. Legit?",
+    "choices": [
+      "Buy it — the company will reimburse later",
+      "Refuse — companies provide equipment, they don't make you buy it",
+      "Negotiate for a cheaper laptop",
+      "Buy it but keep the receipt for tax"
+    ],
+    "correct": 1,
+    "difficulty": 2,
+    "explanation": "Legitimate companies provide work equipment. Forcing purchases from 'authorized vendors' is a scam."
+  },
+  {
+    "id": "scam_05",
+    "question": "You get a WhatsApp message: 'Work from home! Earn ₹50,000/month just by liking YouTube videos. Join now!' What do you think?",
+    "choices": [
+      "Join immediately — easy money!",
+      "It's a task-based scam — they'll ask for 'deposits' later",
+      "Try it for a day to see if it's real",
+      "Share the opportunity with friends"
+    ],
+    "correct": 1,
+    "difficulty": 1,
+    "explanation": "Task-based scams lure you with small payments, then demand deposits for 'premium tasks.' It's a Ponzi scheme."
+  },
+  {
+    "id": "scam_06",
+    "question": "A 'recruiter' calls from an unknown number and asks for your Aadhaar number and PAN card for 'background verification.' Should you?",
+    "choices": [
+      "Share the documents — it's standard procedure",
+      "Never share sensitive documents over a call with an unverified recruiter",
+      "Send only the Aadhaar, not PAN",
+      "Share after they confirm the company name"
+    ],
+    "correct": 1,
+    "difficulty": 2,
+    "explanation": "Never share identity documents until you've verified the company through official channels."
+  },
+  {
+    "id": "scam_07",
+    "question": "An HR person on Telegram says: 'Complete a ₹500 test payment to activate your employee portal.' What's happening?",
+    "choices": [
+      "Normal onboarding process",
+      "Advance-fee scam — no company charges employees to access their portal",
+      "Pay it — ₹500 is nothing for a job",
+      "Ask for UPI ID to verify"
+    ],
+    "correct": 1,
+    "difficulty": 1,
+    "explanation": "Companies never charge employees to access portals. Any payment request is a scam."
+  },
+  {
+    "id": "scam_08",
+    "question": "You find a job posting on Naukri with no company name, no JD, just 'Hiring! 10 LPA+. Call this number.' Your analysis?",
+    "choices": [
+      "Call the number — could be a hidden gem",
+      "Suspicious — legitimate postings have company names, JDs, and qualifications",
+      "Apply anyway — you need a job",
+      "Call but don't share personal info"
+    ],
+    "correct": 1,
+    "difficulty": 2,
+    "explanation": "Legitimate job postings always include company name, job description, and requirements."
+  },
+  {
+    "id": "scam_09",
+    "question": "A company offers you a role but says the first 3 months are 'unpaid training.' Is this normal in India?",
+    "choices": [
+      "Yes, companies often have unpaid training",
+      "No — even internships should be paid. This exploits freshers",
+      "Accept it — you need experience",
+      "Negotiate for 1 month unpaid instead of 3"
+    ],
+    "correct": 1,
+    "difficulty": 2,
+    "explanation": "Unpaid 'training periods' exploit freshers. Even interns deserve compensation."
+  },
+  {
+    "id": "scam_10",
+    "question": "A recruiter says: 'We'll send your offer letter after you clear a ₹15,000 security deposit. It's refundable.' Trust them?",
+    "choices": [
+      "Pay — security deposits are normal",
+      "Refuse — legitimate companies don't ask for security deposits from candidates",
+      "Ask for written confirmation of refund",
+      "Pay half now, half after joining"
+    ],
+    "correct": 1,
+    "difficulty": 1,
+    "explanation": "Security deposits from candidates are illegal. This is a clear scam tactic."
+  },
+  {
+    "id": "scam_11",
+    "question": "You're offered a 'Data Analyst role' but the JD mentions door-to-door sales and insurance selling. What's going on?",
+    "choices": [
+      "It's a multi-role position",
+      "Bait-and-switch — they used a fake title to lure tech candidates into sales",
+      "Accept — sales experience is valuable",
+      "Ask for clarification on the role"
+    ],
+    "correct": 1,
+    "difficulty": 2,
+    "explanation": "Bait-and-switch is when companies advertise one role but hire for another. Always verify the JD matches the title."
+  },
+  {
+    "id": "scam_12",
+    "question": "A 'Google hiring manager' DMs you on Instagram asking you to fill a Google Form with personal details. Legit process?",
+    "choices": [
+      "Fill it — Google uses Forms for hiring",
+      "Scam — Google uses their own careers portal, not Instagram DMs or Google Forms",
+      "Fill it but use a fake address",
+      "Ask them to verify their employee ID first"
+    ],
+    "correct": 1,
+    "difficulty": 1,
+    "explanation": "No major company recruits through Instagram DMs. Always apply through official career pages."
+  },
+  {
+    "id": "scam_13",
+    "question": "Your friend says a 'consultancy' helped them get a job for ₹30,000. They guarantee placement. Should you sign up?",
+    "choices": [
+      "Yes — your friend got a job through them!",
+      "Be cautious — many consultancies take money and provide fake/low-quality placements",
+      "Go if they offer EMI payment",
+      "Pay only if they guarantee a specific company"
+    ],
+    "correct": 1,
+    "difficulty": 2,
+    "explanation": "Most paid placement consultancies exploit freshers. Real placement comes through skills and applications."
+  },
+  {
+    "id": "scam_14",
+    "question": "A job posting says 'Earn ₹1 Lakh/month from home! No experience needed! Join our team!' This is likely...",
+    "choices": [
+      "A great opportunity for freshers",
+      "A pyramid scheme or MLM disguised as a job",
+      "A remote work opportunity",
+      "Worth trying — you have nothing to lose"
+    ],
+    "correct": 1,
+    "difficulty": 1,
+    "explanation": "Unrealistically high pay with no experience required = MLM or pyramid scheme."
+  },
+  {
+    "id": "scam_15",
+    "question": "The 'HR' asks you to share your screen during a video call to 'verify your UPI setup.' Should you?",
+    "choices": [
+      "Share your screen — HR needs to verify",
+      "Never share screens showing banking apps — this is a social engineering scam",
+      "Share but hide the balance",
+      "Use a different UPI app"
+    ],
+    "correct": 1,
+    "difficulty": 2,
+    "explanation": "Screen sharing with banking apps exposes your credentials. No legitimate HR process requires this."
+  },
+  {
+    "id": "scam_16",
+    "question": "A company's website has stock photos, no employee profiles, and a Gmail address for HR. Warning signs?",
+    "choices": [
+      "Many startups use Gmail",
+      "All three together are major red flags — likely a fake company",
+      "Check their social media to verify",
+      "Apply but be careful"
+    ],
+    "correct": 1,
+    "difficulty": 2,
+    "explanation": "Stock photos + no employee profiles + free email = strong indicators of a fraudulent company."
+  },
+  {
+    "id": "scam_17",
+    "question": "You receive an SMS: 'Dear Candidate, you are shortlisted for Amazon. Click link to schedule interview.' The link goes to amaz0n-careers.net. Real?",
+    "choices": [
+      "Click it — Amazon does SMS hiring",
+      "Phishing — the URL is fake (amaz0n with zero, not amazon.com)",
+      "Click but don't enter personal info",
+      "Forward it to Amazon to verify"
+    ],
+    "correct": 1,
+    "difficulty": 1,
+    "explanation": "Look-alike URLs (amaz0n vs amazon) are classic phishing. Always check the exact domain."
+  },
+  {
+    "id": "scam_18",
+    "question": "A 'tech company' interview is conducted entirely on WhatsApp with no video call. Normal?",
+    "choices": [
+      "Yes — many companies use WhatsApp now",
+      "Suspicious — real companies use proper interview platforms, not just WhatsApp text",
+      "It's fine for initial screening",
+      "Ask them to move to Zoom"
+    ],
+    "correct": 1,
+    "difficulty": 2,
+    "explanation": "While companies may use WhatsApp for coordination, conducting entire interviews only on WhatsApp chat is suspicious."
+  },
+  {
+    "id": "scam_19",
+    "question": "A recruiter pressures you: 'Accept the offer by tonight or we'll give it to someone else. Transfer ₹10,000 joining fee now.' What do you do?",
+    "choices": [
+      "Pay quickly — you don't want to lose the opportunity",
+      "Walk away — pressure tactics + money demand = classic scam",
+      "Negotiate for more time",
+      "Pay half and the rest later"
+    ],
+    "correct": 1,
+    "difficulty": 1,
+    "explanation": "Urgency + money demand is a classic manipulation tactic. Legitimate offers give reasonable time to decide."
+  },
+  {
+    "id": "scam_20",
+    "question": "Your resume is on a job portal. A 'company' calls saying they found you there and asks for OTP sent to your phone. Why?",
+    "choices": [
+      "Standard verification process",
+      "They're trying to hack your accounts — OTP sharing gives them access",
+      "Share OTP — they need it for the portal",
+      "Share only the last 4 digits"
+    ],
+    "correct": 1,
+    "difficulty": 1,
+    "explanation": "Never share OTPs with anyone. Scammers use them to access your bank/email accounts."
+  },
+  {
+    "id": "scam_21",
+    "question": "A startup asks you to work for 'equity only' with no salary for the first year. Fair deal?",
+    "choices": [
+      "Great — equity could be worth millions",
+      "Risky — most startups fail, and working without salary is exploitative",
+      "Accept if the equity is over 5%",
+      "Work for 6 months then renegotiate"
+    ],
+    "correct": 1,
+    "difficulty": 3,
+    "explanation": "Working for equity only is extremely risky. Most startups fail, leaving you with nothing."
+  },
+  {
+    "id": "scam_22",
+    "question": "An interviewer asks: 'What's your current CTC? We'll offer CTC + 30%.' You're currently unemployed. Best response?",
+    "choices": [
+      "Make up a higher CTC number",
+      "Be honest and focus on the market rate for the role, not your previous salary",
+      "Say your CTC is confidential",
+      "Quote your friend's salary"
+    ],
+    "correct": 1,
+    "difficulty": 3,
+    "explanation": "Salary should be based on market rates and role value, not previous earnings. Be honest and research-driven."
+  },
+  {
+    "id": "scam_23",
+    "question": "A company's 'HR' contacts you through a Telegram group with 500+ members all getting the 'same offer.' Legitimate?",
+    "choices": [
+      "Mass hiring — it's efficient",
+      "Mass scam — real companies don't send offers to Telegram groups",
+      "It's a group interview format",
+      "Stay in the group and observe"
+    ],
+    "correct": 1,
+    "difficulty": 1,
+    "explanation": "Legitimate companies send individual offers, not mass messages in Telegram groups."
+  },
+  {
+    "id": "scam_24",
+    "question": "A 'freelance platform' asks for ₹2,000 registration fee to access high-paying clients. Worth it?",
+    "choices": [
+      "Pay — access to clients is valuable",
+      "Avoid — real freelance platforms (Upwork, Fiverr) are free to join",
+      "Pay if they guarantee a project",
+      "Ask for a free trial"
+    ],
+    "correct": 1,
+    "difficulty": 2,
+    "explanation": "Legitimate freelance platforms don't charge registration fees. They earn through commission on projects."
+  },
+  {
+    "id": "scam_25",
+    "question": "During an online interview, they ask you to solve a 'real client problem' that would take 10+ hours. Fair?",
+    "choices": [
+      "Do it — shows dedication",
+      "Decline or limit to 2 hours — they might be using you for free labor",
+      "Do it but watermark your work",
+      "Charge them for the work"
+    ],
+    "correct": 1,
+    "difficulty": 3,
+    "explanation": "Extensive unpaid 'test projects' can be free labor extraction. A reasonable assignment takes 1-2 hours max."
+  },
+  {
+    "id": "scam_26",
+    "question": "You get an 'offer letter' with typos, wrong company address, and no HR signature. Should you join?",
+    "choices": [
+      "Join — small mistakes happen",
+      "Reject — unprofessional offer letters indicate a fake or very disorganized company",
+      "Ask them to resend a clean copy",
+      "Join but keep looking"
+    ],
+    "correct": 1,
+    "difficulty": 2,
+    "explanation": "Professional companies have proper documentation. Typos and missing signatures are serious red flags."
+  },
+  {
+    "id": "scam_27",
+    "question": "A 'career coach' charges ₹50,000 to 'guarantee' you a ₹15 LPA+ job. Should you invest?",
+    "choices": [
+      "Pay — it's an investment in your career",
+      "Skip — no one can guarantee a specific salary. Develop skills instead",
+      "Negotiate down to ₹25,000",
+      "Pay after you get the job"
+    ],
+    "correct": 1,
+    "difficulty": 2,
+    "explanation": "No one can guarantee a specific salary. Invest in actual skill development instead of empty promises."
+  },
+  {
+    "id": "scam_28",
+    "question": "You notice the company's Glassdoor reviews are all 5-star, posted in the same week, with generic text. What does this tell you?",
+    "choices": [
+      "Great company — everyone loves working there",
+      "Fake reviews — real companies have mixed ratings. Bulk 5-star reviews are manufactured",
+      "They just launched their page",
+      "Employees are very happy"
+    ],
+    "correct": 1,
+    "difficulty": 3,
+    "explanation": "All 5-star reviews posted simultaneously with generic text = fake reviews. Real companies have mixed ratings."
+  },
+  {
+    "id": "scam_29",
+    "question": "A recruiter offers you a 'contract role' but the contract has a ₹50,000 penalty if you leave within 2 years. Normal?",
+    "choices": [
+      "Standard in IT — sign it",
+      "Predatory — exit penalties trap employees. Negotiate or walk away",
+      "Sign it — you plan to stay anyway",
+      "Sign but plan to challenge it legally later"
+    ],
+    "correct": 1,
+    "difficulty": 3,
+    "explanation": "Excessive exit penalties are used to trap employees. This is exploitative and often unenforceable."
+  },
+  {
+    "id": "scam_30",
+    "question": "A 'company' asks you to download a specific app for their 'custom interview platform.' The app isn't on Play Store. Safe?",
+    "choices": [
+      "Download it — they have their own platform",
+      "Don't download — sideloading unknown APKs can install malware on your device",
+      "Download but scan with antivirus first",
+      "Download on an old phone"
+    ],
+    "correct": 1,
+    "difficulty": 2,
+    "explanation": "Unknown apps outside official stores can contain malware, keyloggers, or spyware. Never sideload APKs."
+  }
+]

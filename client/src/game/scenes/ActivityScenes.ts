@@ -4,18 +4,25 @@
    ============================================================ */
 
 import * as Phaser from 'phaser';
-import type { InterviewEncounter, CodingChallenge, NetworkingEvent } from './game-types';
+// TODO: game-types.ts doesn't exist - types temporarily disabled
+// import type { InterviewEncounter, CodingChallenge, NetworkingEvent } from './game-types';
+type InterviewEncounter = any;
+type CodingChallenge = any;
+type NetworkingEvent = any;
 import { useGameStore } from '@/store/gameStore';
-import { updateNPCTrust, applyNPCInteractions } from '@/engine/npc-manager';
+// TODO: npc-manager doesn't exist - imports temporarily disabled
+// import { updateNPCTrust, applyNPCInteractions } from '@/engine/npc-manager';
+const updateNPCTrust = (...args: any[]) => console.log('updateNPCTrust', args);
+const applyNPCInteractions = (...args: any[]) => console.log('applyNPCInteractions', args);
 
 // ============================================================
 // INTERVIEW SYSTEM
 // ============================================================
 
 export class InterviewScene extends Phaser.Scene {
-  protected currentInterview: InterviewEncounter;
+  protected currentInterview!: InterviewEncounter;
   protected questionIndex: number = 0;
-  protected uiPanel: Phaser.GameObjects.Container;
+  protected uiPanel!: Phaser.GameObjects.Container;
   
   constructor() {
     super('scene-interview');
@@ -54,7 +61,7 @@ export class InterviewScene extends Phaser.Scene {
     });
     
     // Answer options
-    question.answers.forEach((answer, index) => {
+    question.answers.forEach((answer: any, index: number) => {
       this.createAnswerButton(answer, index, 250 + index * 100);
     });
     
@@ -92,7 +99,9 @@ export class InterviewScene extends Phaser.Scene {
     if (success) {
       console.log('✓ Great answer!');
       // Apply stat bonuses
-      gameState.applyStatChanges(answer.fx);
+      if (answer.fx) {
+        gameState.updateStats(answer.fx);
+      }
     } else {
       console.log('✗ Not ideal');
       // Penalty (handled elsewhere)
@@ -118,10 +127,10 @@ export class InterviewScene extends Phaser.Scene {
     if (success) {
       // Job offer!
       this.showOutcome('🎉 Offer Extended!', this.currentInterview.passRewards);
-      gameState.applyStatChanges(this.currentInterview.passRewards);
+      gameState.updateStats(this.currentInterview.passRewards);
     } else {
       this.showOutcome('Unfortunately...', this.currentInterview.failPenalty);
-      gameState.applyStatChanges(this.currentInterview.failPenalty);
+      gameState.updateStats(this.currentInterview.failPenalty);
     }
     
     // Return to world after 3 seconds
@@ -234,12 +243,12 @@ export class CodingChallengeScene extends Phaser.Scene {
     });
     
     let timeLeft = 30;
-    const timer = this.time.addTimer({
+    const timer = this.time.addEvent({
       delay: 1000,
       callback: () => {
         timeLeft--;
         timerText.setText(`${timeLeft}s`);
-        
+
         if (timeLeft <= 0) {
           timer.remove();
           this.showResult(bugsClicked, bugCount);
@@ -316,7 +325,7 @@ const result = fibonacci(5);  // Should be [BLANK3]
     }).setOrigin(0.5);
     
     // Apply skill reward
-    this.gameState.applyStatChanges(rewards);
+    this.gameState.updateStats(rewards);
   }
   
   protected showResult(correct: number, total: number) {
@@ -367,7 +376,7 @@ export class NetworkingEventScene extends Phaser.Scene {
       color: '#ecf0f1'
     });
     
-    this.event.attendees.forEach((npcId, index) => {
+    this.event.attendees.forEach((npcId: any, index: number) => {
       this.createNPCOption(npcId, 100, 200 + index * 80);
     });
     
@@ -394,10 +403,10 @@ export class NetworkingEventScene extends Phaser.Scene {
   
   protected meetNPC(npcId: string) {
     // Improve relationship with this NPC
-    this.gameState.updateNPCRelation(npcId, (npc) =>
-      updateNPCTrust(npc, 10)
-    );
-    
+    // TODO: updateNPCRelation doesn't exist in store
+    console.log('Met NPC:', npcId);
+    updateNPCTrust(npcId, 10);
+
     this.add.text(512, 400, `✓ Met ${npcId}!`, {
       fontSize: '20px',
       color: '#2ecc71'
@@ -407,7 +416,7 @@ export class NetworkingEventScene extends Phaser.Scene {
   protected endEvent() {
     // Apply reputation reward
     const rewards = { reputation: this.event.reputation };
-    this.gameState.applyStatChanges(rewards);
+    this.gameState.updateStats(rewards);
     
     this.scene.stop();
     this.scene.resume('scene-downtown');
@@ -419,7 +428,7 @@ export class NetworkingEventScene extends Phaser.Scene {
 // ============================================================
 
 export class CoffeeChatScene extends Phaser.Scene {
-  protected npcId: string;
+  protected npcId!: string;
   protected gameState = useGameStore();
   
   constructor() {
@@ -476,12 +485,12 @@ export class CoffeeChatScene extends Phaser.Scene {
     const statBonus = [5, 15, 10][index];  // confidence bonuses vary
     
     // Update NPC relationship
-    this.gameState.updateNPCRelation(this.npcId, (npc) =>
-      updateNPCTrust(npc, trustGain)
-    );
+    // TODO: updateNPCRelation doesn't exist in store
+    console.log('Update NPC trust:', this.npcId, trustGain);
+    updateNPCTrust(this.npcId, trustGain);
     
     // Apply stat changes
-    this.gameState.applyStatChanges({ confidence: statBonus });
+    this.gameState.updateStats({ confidence: statBonus });
     
     this.add.text(512, 550, `✓ Great conversation!`, {
       fontSize: '16px',

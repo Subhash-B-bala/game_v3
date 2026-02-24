@@ -11,6 +11,16 @@ const JobHuntChapter = dynamic(() => import("@/engine/chapter3_job_hunt/JobHuntC
 const RoadmapTransition = dynamic(() => import("@/components/RoadmapTransition"), { ssr: false });
 const StrategicBriefing = dynamic(() => import("@/components/StrategicBriefing"), { ssr: false });
 
+// Babylon.js Components
+const VoxelWorld = dynamic(() => import("@/components/babylon/VoxelWorld"), { ssr: false });
+const TonyRoom = dynamic(() => import("@/components/babylon/TonyRoom"), { ssr: false });
+const JobHuntWorld = dynamic(() => import("@/components/babylon/JobHuntWorld"), { ssr: false });
+
+// 3D Components
+const CharacterCreator = dynamic(() => import("@/components/3d/CharacterCreator"), { ssr: false });
+const OnboardingWorld = dynamic(() => import("@/components/3d/OnboardingWorld"), { ssr: false });
+const OnboardingSceneManager = dynamic(() => import("@/components/3d/OnboardingSceneManager"), { ssr: false });
+
 import { createSession, submitAction, getMirror } from "@/lib/api";
 import { useGameStore } from "@/store/gameStore";
 import { useAudio } from "@/hooks/useAudio";
@@ -128,13 +138,16 @@ const CHAPTER_NAMES: Record<number, string> = {
 export default function GamePage() {
     const store = useGameStore();
 
+    // Toggle for 3D mode (you can turn this on/off)
+    const [use3D, setUse3D] = useState(true); // Set to false to use old 2D UI
+
     // 1. Loading State (Dashboard style)
     if (store.isLoading) {
         return (
-            <main className="min-h-screen bg-[#0f172a] flex items-center justify-center p-4">
+            <main className="min-h-screen flex items-center justify-center p-4" style={{ backgroundColor: 'var(--background)' }}>
                 <div className="text-center">
                     <div className="w-16 h-16 border-4 border-purple-500 border-t-transparent rounded-full animate-spin mx-auto mb-4" />
-                    <p className="text-white/60 font-medium animate-pulse tracking-widest uppercase text-sm">Initializing Scenario Engine...</p>
+                    <p className="font-medium animate-pulse tracking-widest uppercase text-sm" style={{ color: 'var(--foreground-muted)' }}>Initializing Scenario Engine...</p>
                 </div>
             </main>
         );
@@ -143,7 +156,7 @@ export default function GamePage() {
     // 2. Professional Splash Screen
     if (store.uiPhase === "intro") {
         return (
-            <main className="min-h-screen bg-[#0f172a] flex items-center justify-center p-4 relative overflow-hidden">
+            <main className="min-h-screen flex items-center justify-center p-4 relative overflow-hidden" style={{ backgroundColor: 'var(--background)' }}>
                 {/* Abstract Background Element */}
                 <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none" />
 
@@ -152,24 +165,26 @@ export default function GamePage() {
                         <span className="text-blue-400 font-bold text-xs tracking-[0.2em] uppercase">A Codebasics Production</span>
                     </div>
 
-                    <h1 className="text-5xl md:text-7xl font-black text-white mb-6 tracking-tight leading-none">
+                    <h1 className="text-5xl md:text-7xl font-black mb-6 tracking-tight leading-none" style={{ color: 'var(--foreground)' }}>
                         CAREER<br />
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">SIMULATOR</span>
                     </h1>
 
-                    <p className="text-slate-400 text-lg md:text-xl mb-10 max-w-lg mx-auto leading-relaxed font-medium">
+                    <p className="text-lg md:text-xl mb-10 max-w-lg mx-auto leading-relaxed font-medium" style={{ color: 'var(--foreground-muted)' }}>
                         Navigate the corporate labyrinth. Make tough choices. Build your legacy.
                     </p>
 
                     <button
-                        className="group relative px-10 py-5 bg-white text-black text-lg font-black uppercase tracking-widest rounded-full transition-all hover:scale-105 hover:shadow-[0_0_40px_rgba(255,255,255,0.3)]"
-                        onClick={() => store.setUiPhase("setup")}
+                        className="group relative px-10 py-5 text-lg font-black uppercase tracking-widest rounded-full transition-all hover:scale-105 hover:shadow-[0_0_40px_rgba(255,255,255,0.3)]"
+                        style={{ backgroundColor: 'var(--primary)', color: '#ffffff' }}
+                        onClick={() => store.setUiPhase("tony_room")}
                     >
                         Start Your Journey
                         <span className="inline-block ml-2 transition-transform group-hover:translate-x-1">→</span>
                     </button>
 
-                    <div className="mt-12 text-slate-600 text-xs font-bold tracking-widest uppercase">
+
+                    <div className="mt-12 text-xs font-bold tracking-widest uppercase" style={{ color: 'var(--foreground-muted)' }}>
                         Real Life Career Sim • v4.0 (Engine Powered)
                     </div>
                 </div>
@@ -177,17 +192,33 @@ export default function GamePage() {
         );
     }
 
-    // 3. Name Input Phase
+    // 3. Name Input Phase (with 3D option)
     if (store.uiPhase === "setup") {
+        if (use3D) {
+            return <CharacterCreator />;
+        }
         return (
-            <main className="min-h-screen bg-[#0f172a] flex items-center justify-center p-4">
+            <main className="min-h-screen flex items-center justify-center p-4" style={{ backgroundColor: 'var(--background)' }}>
                 <NameInput />
             </main>
         );
     }
 
-    // 4. Strategic Briefing Phase
+    // 4. Tony Sharma's Room — Onboarding Questions
+    if (store.uiPhase === "tony_room") {
+        return (
+            <TonyRoom
+                playerName={store.characterName}
+                onComplete={() => store.setUiPhase("jobhunt")}
+            />
+        );
+    }
+
+    // 4b. Strategic Briefing Phase (legacy 3D Onboarding)
     if (store.uiPhase === "briefing") {
+        if (use3D) {
+            return <OnboardingSceneManager />;
+        }
         return <StrategicBriefing />;
     }
 
@@ -200,6 +231,16 @@ export default function GamePage() {
         return <RoadmapTransition />;
     }
 
-    // Default: Game Workspace
+    // 6. Job Hunt — GTA-Style Free-Roam 3D Rooms ("The Climb")
+    if (store.uiPhase === "jobhunt") {
+        return <JobHuntWorld />;
+    }
+
+    // 7. Voxel World for game phase
+    if (store.uiPhase === "game") {
+        return <VoxelWorld playerName={store.characterName} />;
+    }
+
+    // Default: Game Workspace (fallback)
     return <Workspace />;
 }

@@ -1,0 +1,65 @@
+{
+  "typing_challenges": [
+    { "id": "tc_01", "text": "SELECT name, salary FROM employees WHERE department = 'Engineering' ORDER BY salary DESC;", "difficulty": 1, "timeLimit": 20 },
+    { "id": "tc_02", "text": "def calculate_roi(investment, returns): return (returns - investment) / investment * 100", "difficulty": 1, "timeLimit": 18 },
+    { "id": "tc_03", "text": "CREATE TABLE candidates (id INT PRIMARY KEY, name VARCHAR(100), skills TEXT, experience INT);", "difficulty": 2, "timeLimit": 22 },
+    { "id": "tc_04", "text": "const filterActiveJobs = jobs.filter(j => j.status === 'active' && j.salary > minSalary);", "difficulty": 2, "timeLimit": 18 },
+    { "id": "tc_05", "text": "import pandas as pd; df = pd.read_csv('jobs.csv'); df.groupby('company').mean()['salary']", "difficulty": 2, "timeLimit": 20 },
+    { "id": "tc_06", "text": "async function fetchJobs(query) { const res = await fetch(`/api/jobs?q=${query}`); return res.json(); }", "difficulty": 3, "timeLimit": 22 }
+  ],
+  "spot_the_error": [
+    {
+      "id": "se_01", "difficulty": 1, "timeLimit": 15,
+      "title": "Resume Check",
+      "content": "WORK EXPERIENCE: Data Analyst at Goggle (2 years). Skills: Exel, Python, Sequel. Achievements: Increased revenue by 500% in first week.",
+      "errors": ["Goggle (should be Google)", "Exel (should be Excel)", "Sequel (should be SQL)", "500% in first week (unrealistic)"],
+      "errorCount": 4
+    },
+    {
+      "id": "se_02", "difficulty": 2, "timeLimit": 20,
+      "title": "Job Posting Check",
+      "content": "HIRING: Senior Data Scientist. Salary: ₹50 LPA. Requirements: 0 years experience. Work from home. No interview. Contact: hiring@gmail.com. Registration fee: ₹5000.",
+      "errors": ["₹50 LPA for 0 experience (unrealistic)", "No interview (red flag)", "gmail.com (unprofessional)", "Registration fee (scam)"],
+      "errorCount": 4
+    },
+    {
+      "id": "se_03", "difficulty": 2, "timeLimit": 18,
+      "title": "Offer Letter Check",
+      "content": "Dear Candiate, We are please to offer you the postion of Software Enginer at TechCorp Pvt. Ltd. Your CTC will be discussed later. Joining date: Tommorrow. Please deposit ₹15,000 security.",
+      "errors": ["Candiate (typo)", "postion (typo)", "CTC discussed later (should be in offer)", "Tommorrow (no proper notice)", "₹15,000 security deposit (scam)"],
+      "errorCount": 5
+    }
+  ],
+  "quiz_rapid_fire": [
+    {
+      "id": "qr_01", "difficulty": 1, "timeLimit": 30,
+      "questions": [
+        { "q": "What does ATS stand for?", "choices": ["Applicant Tracking System", "Automated Test System", "Applied Tech Stack", "Anything To Say"], "correct": 0 },
+        { "q": "Best format for sending a resume?", "choices": ["PDF", "DOCX", "JPG", "TXT"], "correct": 0 },
+        { "q": "What is a cover letter?", "choices": ["A letter explaining why you're a good fit", "A physical cover for your resume", "A salary negotiation letter", "A reference letter"], "correct": 0 },
+        { "q": "STAR method is used for?", "choices": ["Behavioral interviews", "Coding tests", "Salary negotiation", "Resume writing"], "correct": 0 },
+        { "q": "What does CTC mean?", "choices": ["Cost to Company", "Current Total Compensation", "Company Tax Credit", "Candidate Test Certificate"], "correct": 0 }
+      ]
+    },
+    {
+      "id": "qr_02", "difficulty": 2, "timeLimit": 30,
+      "questions": [
+        { "q": "What is the typical Indian notice period?", "choices": ["30-90 days", "1 week", "Same day", "6 months"], "correct": 0 },
+        { "q": "What does LPA stand for?", "choices": ["Lakhs Per Annum", "Lowest Pay Average", "Legal Pay Agreement", "Last Pay Advance"], "correct": 0 },
+        { "q": "Which is NOT a legitimate job portal?", "choices": ["GetRichQuick.com", "Naukri.com", "LinkedIn", "Indeed"], "correct": 0 },
+        { "q": "PF stands for?", "choices": ["Provident Fund", "Personal Finance", "Pay Forward", "Professional Fee"], "correct": 0 },
+        { "q": "What is a probation period?", "choices": ["Trial period at new job", "Jail term", "Unpaid internship", "Exam preparation time"], "correct": 0 }
+      ]
+    },
+    {
+      "id": "qr_03", "difficulty": 3, "timeLimit": 30,
+      "questions": [
+        { "q": "What is equity vesting?", "choices": ["Gradual earning of stock options over time", "Buying company uniform", "Monthly salary payment", "Insurance coverage"], "correct": 0 },
+        { "q": "Non-compete clause means?", "choices": ["Can't join competitor for set period", "Must win competitions", "No teamwork allowed", "Must compete for promotion"], "correct": 0 },
+        { "q": "What is a retention bonus?", "choices": ["Bonus to keep employee from leaving", "Sign-on bonus", "Performance bonus", "Holiday bonus"], "correct": 0 },
+        { "q": "ESOP stands for?", "choices": ["Employee Stock Ownership Plan", "Emergency Stop Operation Plan", "Entry System Online Portal", "Executive Share Option Program"], "correct": 0 },
+        { "q": "What does 'at-will employment' mean?", "choices": ["Either party can end employment anytime", "You work whenever you want", "Voluntary work only", "Contract-based work"], "correct": 0 }
+      ]
+    }
+  ]
+}

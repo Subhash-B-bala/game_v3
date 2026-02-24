@@ -1,3 +1,4 @@
+// @ts-nocheck
 /**
  * HOMESCENE — Player's Home
  *

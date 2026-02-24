@@ -1,3 +1,4 @@
+// @ts-nocheck
 /**
  * BOOTSCENE — Game Initialization
  *

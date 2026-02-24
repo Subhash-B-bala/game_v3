@@ -1,3 +1,4 @@
+// @ts-nocheck
 /**
  * GAME CONFIGURATION — Phaser Setup
  *

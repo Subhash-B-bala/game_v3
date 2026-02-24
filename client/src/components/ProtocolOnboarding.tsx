@@ -14,7 +14,7 @@ export default function ProtocolOnboarding() {
     const [avatarPreview, setAvatarPreview] = useState<string | null>(null);
     const fileInputRef = useRef<HTMLInputElement>(null);
 
-    const { setUserName, setUserAvatar, setPhase, setSceneIndex } = useGameStore();
+    const { initGame, setUiPhase } = useGameStore();
 
     // Simulation logic
     useEffect(() => {
@@ -47,14 +47,12 @@ export default function ProtocolOnboarding() {
 
     const handleProceed = () => {
         if (!name.trim()) return;
-        setUserName(name.trim());
-        setUserAvatar(avatarPreview);
+        // TODO: avatarPreview not yet implemented in initGame
         setStage("handshake");
 
-        // Final transition to game
+        // Final transition to game - initGame will set the uiPhase
         setTimeout(() => {
-            setSceneIndex(1); // Explicitly move to Chapter 1
-            setPhase("chapter1_role");
+            initGame(name.trim(), "fresher");
         }, 1800);
     };
 
