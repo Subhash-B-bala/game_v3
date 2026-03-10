@@ -1,0 +1,17 @@
+{
+  "name": "careersim-game",
+  "version": "0.1.0",
+  "private": true,
+  "description": "CareerSim — 3D Career Simulation Game",
+  "scripts": {
+    "install:all": "cd client && npm install && cd ../server && npm install",
+    "dev:server": "cd server && npm run dev",
+    "dev:client": "cd client && npm run dev -- -p 3002",
+    "dev": "npx concurrently --kill-others \"npm run dev:server\" \"npm run dev:client\"",
+    "setup": "npm install && npm run install:all",
+    "build": "cd client && npm run build && cd ../server && npm run build"
+  },
+  "dependencies": {
+    "concurrently": "^9.1.0"
+  }
+}

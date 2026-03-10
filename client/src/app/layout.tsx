@@ -26,7 +26,7 @@ export default function RootLayout({
     children: React.ReactNode;
 }) {
     return (
-        <html lang="en">
+        <html lang="en" suppressHydrationWarning>
             <body className={`${kanit.variable} ${saira.variable} font-sans antialiased text-white bg-[#181830]`}>{children}</body>
         </html>
     );

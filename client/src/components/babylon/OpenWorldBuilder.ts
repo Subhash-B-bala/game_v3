@@ -152,6 +152,39 @@ export async function buildOpenWorld(
     scene.clearColor = new BABYLON.Color4(0.55, 0.68, 0.85, 1.0);
 
     // ══════════════════════════════════════════════════════════
+    // ENVIRONMENT TEXTURE — Required for PBR materials
+    // Without this, every PBR material logs a warning per frame.
+    // Uses a procedural texture (no external URL / no CORS issues).
+    // ══════════════════════════════════════════════════════════
+    const envSize = 64;
+    const envTexture = new BABYLON.RawCubeTexture(scene, null, envSize);
+    const faceColors = [
+        [0.5, 0.55, 0.6],  // +X
+        [0.45, 0.5, 0.55], // -X
+        [0.7, 0.75, 0.8],  // +Y (sky)
+        [0.25, 0.25, 0.3], // -Y (ground)
+        [0.5, 0.55, 0.6],  // +Z
+        [0.45, 0.5, 0.55], // -Z
+    ];
+    const faces: ArrayBufferView[] = [];
+    for (let f = 0; f < 6; f++) {
+        const data = new Float32Array(envSize * envSize * 4);
+        const [r, g, b] = faceColors[f];
+        for (let i = 0; i < data.length; i += 4) {
+            data[i] = r;
+            data[i + 1] = g;
+            data[i + 2] = b;
+            data[i + 3] = 1.0;
+        }
+        faces.push(data);
+    }
+    const ENGINE = BABYLON.Constants;
+    envTexture.update(faces, ENGINE.TEXTUREFORMAT_RGBA, ENGINE.TEXTURETYPE_FLOAT, false);
+    envTexture.gammaSpace = false;
+    scene.environmentTexture = envTexture;
+    scene.environmentIntensity = 0.3;
+
+    // ══════════════════════════════════════════════════════════
     // LIGHTING — Urban outdoor
     // ══════════════════════════════════════════════════════════
 
@@ -263,24 +296,37 @@ export async function buildOpenWorld(
     // ══════════════════════════════════════════════════════════
     // POST-PROCESSING
     // ══════════════════════════════════════════════════════════
-    try {
-        const pipeline = new BABYLON.DefaultRenderingPipeline('defaultPipeline', true, scene, [scene.activeCamera]);
-        pipeline.bloomEnabled = true;
-        pipeline.bloomThreshold = 0.75;
-        pipeline.bloomWeight = 0.25;
-        pipeline.bloomKernel = 64;
-        pipeline.bloomScale = 0.5;
-        pipeline.imageProcessingEnabled = true;
-        pipeline.imageProcessing.toneMappingEnabled = true;
-        pipeline.imageProcessing.toneMappingType = BABYLON.ImageProcessingConfiguration.TONEMAPPING_ACES;
-        pipeline.imageProcessing.contrast = 1.1;
-        pipeline.imageProcessing.exposure = 1.0;
-        pipeline.imageProcessing.vignetteEnabled = true;
-        pipeline.imageProcessing.vignetteWeight = 1.5;
-        pipeline.imageProcessing.vignetteColor = new BABYLON.Color4(0.1, 0.1, 0.15, 0);
-        pipeline.fxaaEnabled = true;
-    } catch (e) {
-        console.warn('Post-processing setup failed:', e);
+    // Post-processing is deferred until camera is available.
+    // The caller (setupOpenWorld → createPlayerController) creates the camera later.
+    // We attach pipeline once a camera exists via onNewCameraAddedObservable.
+    const setupPipeline = (camera: any) => {
+        try {
+            const pipeline = new BABYLON.DefaultRenderingPipeline('defaultPipeline', true, scene, [camera]);
+            pipeline.bloomEnabled = true;
+            pipeline.bloomThreshold = 0.75;
+            pipeline.bloomWeight = 0.25;
+            pipeline.bloomKernel = 64;
+            pipeline.bloomScale = 0.5;
+            pipeline.imageProcessingEnabled = true;
+            pipeline.imageProcessing.toneMappingEnabled = true;
+            pipeline.imageProcessing.toneMappingType = BABYLON.ImageProcessingConfiguration.TONEMAPPING_ACES;
+            pipeline.imageProcessing.contrast = 1.1;
+            pipeline.imageProcessing.exposure = 1.0;
+            pipeline.imageProcessing.vignetteEnabled = true;
+            pipeline.imageProcessing.vignetteWeight = 1.5;
+            pipeline.imageProcessing.vignetteColor = new BABYLON.Color4(0.1, 0.1, 0.15, 0);
+            pipeline.fxaaEnabled = true;
+        } catch {
+            // Silently skip if post-processing setup fails
+        }
+    };
+
+    if (scene.activeCamera) {
+        setupPipeline(scene.activeCamera);
+    } else {
+        scene.onNewCameraAddedObservable.addOnce((camera: any) => {
+            setupPipeline(camera);
+        });
     }
 
     // ══════════════════════════════════════════════════════════
@@ -620,7 +666,7 @@ export async function buildOpenWorld(
         ps.colorDead = new BABYLON.Color4(0.8, 0.8, 0.8, 0);
         ps.gravity = new BABYLON.Vector3(0.05, -0.1, 0.02);
         ps.start();
-    } catch (e) { console.warn('Particle setup failed:', e); }
+    } catch { /* skip */ }
 
     // ══════════════════════════════════════════════════════════
     // INTERACTABLE OBJECTS

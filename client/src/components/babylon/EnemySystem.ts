@@ -191,8 +191,8 @@ export async function createEnemySystem(
 
                 enemies.push(enemy);
                 enemyIndex++;
-            } catch (e) {
-                console.warn(`Failed to create enemy ${d}_${i}:`, e);
+            } catch {
+                // Silently skip failed enemy creation
             }
         }
     }

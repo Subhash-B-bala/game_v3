@@ -291,8 +291,7 @@ export async function loadCharacterWithFallback(
 ): Promise<AnimatedCharacter> {
     try {
         return await loadGLBCharacter(scene, role, overrideScale);
-    } catch (err) {
-        console.warn(`[GLBCharacter] Failed to load GLB for ${role}, falling back to procedural:`, err);
+    } catch {
         // Fallback to procedural character
         const { createAnimatedCharacter, CHARACTER_PRESETS } = await import('./CharacterBuilder');
         const preset = (CHARACTER_PRESETS as any)[role] || CHARACTER_PRESETS.player;

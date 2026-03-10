@@ -52,8 +52,8 @@ export async function loadModel(
             // Hide the cached original
             root.setEnabled(false);
             modelCache.set(path, root);
-        } catch (err) {
-            console.warn(`[AssetLoader] Failed to load ${path}:`, err);
+        } catch {
+            // Silently skip failed models — non-critical for gameplay
             return null;
         }
     }
@@ -106,8 +106,8 @@ export async function preloadModels(
                 }
                 root.setEnabled(false);
                 modelCache.set(path, root);
-            } catch (err) {
-                console.warn(`[AssetLoader] Failed to preload ${path}:`, err);
+            } catch {
+                // Silently skip failed preloads
             }
         });
 
